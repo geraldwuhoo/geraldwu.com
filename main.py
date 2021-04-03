@@ -21,7 +21,11 @@ def main():
     
     # Fill in predefined variables from GitLab CI/CD
     data['commit'] = os.getenv('CI_COMMIT_SHORT_SHA', 'N/A')
+<<<<<<< Updated upstream
     data['repo'] = os.getenv('CI_REPOSITORY_URL', '#')
+=======
+    data['repo'] = os.getenv('CI_PROJECT_URL', '#')
+>>>>>>> Stashed changes
     data['pipeline'] = os.getenv('CI_PIPELINE_URL', '#')
     data['pipeline_id'] = os.getenv('CI_PIPELINE_ID', 'N/A')
 
