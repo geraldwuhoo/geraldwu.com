@@ -9,8 +9,6 @@ def main():
 
     with open(config) as f:
         data = yaml.safe_load(f)
-    
-    print(data)
 
     for job in data["experience"]:
         job["description"] = markdown.markdown(job["description"])[3:-4]
@@ -21,8 +19,6 @@ def main():
     subs = jinja2.Environment(
         loader=jinja2.FileSystemLoader('./')
     ).get_template(template).render(data=data)
-
-    print(subs)
 
     with open(outputfile, 'w') as f:
         f.write(subs)
