@@ -1,19 +1,10 @@
-image: python:3-alpine
 
 stages:
   - build
   - deploy
 
-before_script:
-  - 'which ssh-agent || (apk update && apk add openssh-client)'
-  - mkdir -p ~/.ssh
-  - chmod 700 ~/.ssh
-  - eval $(ssh-agent -s)
-  - echo "$SSH_PRIVATE_KEY" | ssh-add -
-  - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
-  - chmod 644 ~/.ssh/known_hosts
-
 build:
+  image: python:3-alpine
   stage: build
   script:
     - pip install -r requirements.txt
@@ -24,6 +15,15 @@ build:
       - style.css
 
 deploy:
+  image: alpine:3
   stage: deploy
+  before_script:
+    - 'which ssh-agent || (apk update && apk add openssh-client)'
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | ssh-add -
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
   script:
     - scp -v index.html style.css "$SITE_PATH"
