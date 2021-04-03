@@ -25,7 +25,7 @@ def main():
     data['pipeline'] = {}
 
     data['repo']['path'] = os.getenv('CI_PROJECT_PATH', 'N/A')
-    data['repo']['url'] = os.getenv('CI_PROJECT_URL')
+    data['repo']['url'] = os.getenv('CI_PROJECT_URL', '')
     data['commit']['sha'] = os.getenv('CI_COMMIT_SHORT_SHA', 'N/A')
     if os.environ.get('CI_PROJECT_URL'):
         data['commit']['url'] = f"{os.environ['CI_PROJECT_URL']}/commit/{os.environ['CI_COMMIT_SHA']}"
