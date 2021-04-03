@@ -31,5 +31,5 @@ The new `index.html` and `style.css` combined are less than 10KB! The final page
 * Add "About Me" section
 * Add footer with contact info
 * Optimize images
-* GitLab CI/CD to automatically deploy changes to geraldwu.com
+* ~~GitLab CI/CD to automatically deploy changes to geraldwu.com~~ DONE
 * gzip compression at the webserver
