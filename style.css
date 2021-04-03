@@ -11,7 +11,11 @@ body {
 }
 
 h1, h2, h3 {
-    line-height: 1.2;
+    line-height: 1.4;
+}
+
+header {
+    padding: 15% 0;
 }
 
 @media print {
@@ -44,13 +48,19 @@ div.right {
     color: #888888;
 }
 
-header>h1 {
+header {
     text-align: center;
 }
 
 header>aside {
     text-align: center;
     color: #888888;
+}
+
+header>aside>a {
+    text-align: center;
+    color: #888888;
+    border-bottom: 0px;
 }
 
 .project {
@@ -64,9 +74,10 @@ header>aside {
     padding-right: 10px;
 }
 
-.project .box img {
+.project .box a>img {
     vertical-align: middle;
     width: 100%;
+    border-radius: 5%;
 }
 
 @media (max-width: 800px) {

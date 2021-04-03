@@ -7,46 +7,51 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-  <header>
-    <h1>Gerald Wu</h1>
-    <aside>Software Development / IT</aside>
-  </header>
-  <h2>Experience</h2>
-  {% for job in data.experience %}
-  <p>
-    <div class="left"><strong>{{job.company}}</strong></div>
-    <div class="right grey">{{job.dates}}</div><br>
-    <div class="grey"><em>{{job.position}}</em></div>
-    {{job.description}}
-  </p>
-  {% endfor %}
-
-  <h2>Projects</h2>
-  {% for project in data.projects %}
-  <div class="project">
-    <div class="box">
-      <img src="{{project.image}}">
-    </div>
-    <div class="box">
-      <strong><a target="_blank" href="{{project.link}}">{{project.title}}</a></strong><br>
-      <em class="grey">{{project.language}}</em><br>
-      {{project.description}}
-    </div>
-  </div>
-  <br>
-  {% endfor %}
-
-  <h2>Self-hosted Services</h2>
-  <p class="grey">Deployed with Docker on VMWare vSphere via Ansible and docker-compose.</p>
-  <div class="service">
-    {% for service in data.services %}
-    <div class="box">
-      <a target="_blank" href="{{service.link}}">
-        <img src="{{service.logo}}"><br>
-        {{service.title}}
-      </a>
-    </div>
+    <header>
+      <h1>Gerald Wu</h1>
+      <aside>
+        Software Development / IT<br>
+        <a href="{{data.resume}}">[Resume]</a>
+      </aside>
+    </header>
+    <h2>Experience</h2>
+    {% for job in data.experience %}
+    <p>
+      <div class="left"><strong>{{job.company}}</strong></div>
+      <div class="right grey">{{job.dates}}</div><br>
+      <div class="grey"><em>{{job.position}}</em></div>
+      {{job.description}}
+    </p>
     {% endfor %}
-  </div>
+
+    <h2>Projects</h2>
+    {% for project in data.projects %}
+    <div class="project">
+      <div class="box">
+        <a target="_blank" href="{{project.link}}">
+          <img src="{{project.image}}">
+        </a>
+      </div>
+      <div class="box">
+        <strong><a target="_blank" href="{{project.link}}">{{project.title}}</a></strong><br>
+        <em class="grey">{{project.language}}</em><br>
+        {{project.description}}
+      </div>
+    </div>
+    <br>
+    {% endfor %}
+
+    <h2>Self-hosted Services</h2>
+    <p class="grey">Deployed with Docker on VMWare vSphere via Ansible and docker-compose.</p>
+    <div class="service">
+      {% for service in data.services %}
+      <div class="box">
+        <a target="_blank" href="{{service.link}}">
+          <img src="{{service.logo}}"><br>
+          {{service.title}}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
   </body>
 </html>
