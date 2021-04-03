@@ -54,4 +54,8 @@
       {% endfor %}
     </div>
   </body>
+  <footer class="grey">
+    Git commit: <a href="{{data.repo}}">{{data.commit}}</a><br>
+    CI/CD Pipeline: <a href="{{data.pipeline}}">#{{data.pipeline_id}}</a>
+  </footer>
 </html>

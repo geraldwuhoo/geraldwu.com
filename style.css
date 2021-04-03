@@ -48,6 +48,12 @@ div.right {
     color: #888888;
 }
 
+.grey a {
+    border-bottom: 1px solid #888888;
+    color: #888888;
+    text-decoration: none;
+}
+
 header {
     text-align: center;
 }
