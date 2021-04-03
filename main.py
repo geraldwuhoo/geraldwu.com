@@ -21,9 +21,10 @@ def main():
     
     # Fill in predefined variables from GitLab CI/CD
     data['commit'] = os.getenv('CI_COMMIT_SHORT_SHA', 'N/A')
-    data['repo'] = os.getenv('CI_PROJECT_URL', '#')
-    data['pipeline'] = os.getenv('CI_PIPELINE_URL', '#')
+    if os.environ.get('CI_PROJECT_URL'):
+        data['repo'] = f"{os.environ['CI_PROJECT_URL']}/commit/{os.environ['CI_COMMIT_SHA']}"
     data['pipeline_id'] = os.getenv('CI_PIPELINE_ID', 'N/A')
+    data['pipeline'] = os.getenv('CI_PIPELINE_URL', '')
 
     # Execute the jinja2 template
     subs = jinja2.Environment(
