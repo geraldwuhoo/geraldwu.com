@@ -1,0 +1,85 @@
+title: Gerald Wu's Portfolio
+
+experience:
+  - company: Amazon Web Services (AWS)
+    position: Software Engineer Intern
+    dates: May 2020 - Aug 2020
+    description: |
+      I worked with the Amazon Connect team &mdash; a cloud-based call center as a service product running on AWS. I worked on migrating to Safe Dynamic Config (SDC) as the backend service for Feature Access Control (FAC).  
+      To accomplish this task, I wrote a library to pull deployed SDCs from remote and parse/evaluate their contents to allow/deny access to certain features on a per-user basis. In addition, I deployed a configuration pipeline to implement strict templating and SDC generation for configuration as code purposes. Since this was the beginning of my team's migration, both of these tasks were written from scratch.  
+      I also implemented a proof-of-concept for my project, showing a demo wherein an existing FAC implementation was replaced with my new library.
+  - company: Brown University
+    position: Computer Science Teaching Assistant
+    dates: Sep 2019 - Dec 2019
+    description: |
+      Undergraduate teaching assistant for CSCI 1270: Database Management Systems. This is an intermediate-level course that covers both database design and theoretical database concepts.
+  - company: Leidos
+    position: Software Engineer Intern
+    dates: May 2019 - Aug 2019
+    description: |
+      Worked on an autonomous (self-driving) seafaring vessel. I was a primary designer of the systems architecture for a virtualization/containerization approach.  
+      I researched, proposed, and implemented various architectures, including VMWare vSphere, VMWare vSAN, Red Hat OpenShift, and bare Kubernetes.  
+      In addition, I was part of the core team in charge of the software migration effort between major operating system releases. Most of the codebase was in C++/Python, and required non-trivial rewrites to match new library versions.
+  - company: Brown University
+    position: Applied Mathematics Teaching Assistant
+    dates: Sep 2018 - Dec 2018
+    description: |
+      Undergraduate teaching assistant for APMA 0340: Methods of Applied Mathematics II. This course covers both nonlinear ordinary differential equations and partial differential equations from an applied mathematics perspective.
+  - company: FMS Inc.
+    position: Software Engineer Intern
+    dates: May 2018 - Aug 2018
+    description: |
+      Researched, implemented, and optimized the Markov Clustering Algorithm in C# to identify clusters in relational graphs of size 100,000+ nodes and 120,000+ edges within 10 minutes. The clustering was implemented in the Sentinel Visualizer product, and allowed it to handle much larger graphs.  
+      Also implemented secure, PCI-compliant payment integration on the web using Authorize.Net in ASP Classic backend and JQuery/AJAX frontend. It was a complete integration with the Authorize.Net payment gateway, including both one-time payments and long-term customer payment profiles.
+  
+projects:
+  - title: Omgur &mdash; A FOSS private front-end for Imgur
+    link: "https://git.geraldwu.com/gerald/Omgur"
+    language: Golang
+    image: "https://geraldwu.com/images/imgur-logo.png"
+    description: |
+      Omgur is a free and open-source private front-end proxy for Imgur, inspired by [Invidious](https://github.com/iv-org/invidious), [Nitter](https://github.com/zedeus/nitter), and [Teddit](https://github.com/teddit-net/teddit). Omgur runs with no JavaScript, ads, or tracking. All requests are proxied through the Omgur backend to prevent Imgur from tracking IP or JavaScript fingerprint. Easily self-hostable through the Docker image provided by Gitlab CI/CD configuration.
+  - title: Quantum Mechanical Wave Function Propagation
+    link: "https://git.geraldwu.com/gerald/QuantumEvolution"
+    language: Processing
+    image: "https://geraldwu.com/images/quantum.jpg"
+    description: |
+      A program to evolve arbitrary initial states through time for the one-dimensional Schrodinger Equation and Wave Equation in the absence of a potential field. Highly optimized to run in **real time**. No pre-rendering. Accurate to millions of timesteps before noticeable error propagation. Written in Processing (a fork of Java with a focus on real-time graphing), with a small shell script launcher.
+
+services:
+  - title: GitLab CE
+    link: "https://git.geraldwu.com"
+    logo: "https://geraldwu.com/images/gitlab-logo.png"
+  - title: GitLab Container Registry
+    link: "https://git.geraldwu.com/gerald/omgur/container_registry"
+    logo: "https://geraldwu.com/images/gitlab-logo.png"
+  - title: Matrix Synapse
+    link: "https://synapse.geraldwu.com"
+    logo: "https://geraldwu.com/images/matrix-logo.png"
+  - title: Element
+    link: "https://element.geraldwu.com"
+    logo: "https://geraldwu.com/images/element-logo.png"
+  - title: EteSync
+    link: "https://etesync.geraldwu.com"
+    logo: "https://geraldwu.com/images/etesync-logo.png"
+  - title: EteSync-Web
+    link: "https://pim.geraldwu.com"
+    logo: "https://geraldwu.com/images/etesync-logo.png"
+  - title: Gotify
+    link: "https://gotify.geraldwu.com"
+    logo: "https://geraldwu.com/images/gotify-logo.png"
+  - title: PrivateBin
+    link: "https://privatebin.geraldwu.com"
+    logo: "https://geraldwu.com/images/privatebin-logo.png"
+  - title: Firefox Sync
+    link: "https://sync.geraldwu.com"
+    logo: "https://geraldwu.com/images/firefox-logo.png"
+  - title: Seafile
+    link: "https://seafile.geraldwu.com"
+    logo: "https://geraldwu.com/images/seafile-logo.png"
+  - title: Calibre-Web
+    link: "https://calibre.geraldwu.com"
+    logo: "https://geraldwu.com/images/calibre-logo.png"
+  - title: DokuWiki
+    link: "https://wiki.geraldwu.com"
+    logo: "https://geraldwu.com/images/dokuwiki-logo.png"
