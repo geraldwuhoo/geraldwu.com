@@ -25,4 +25,4 @@ deploy:
     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
   script:
-    - scp -v index.html style.css "$SITE_PATH"
+    - scp index.html style.css "$SITE_PATH"
