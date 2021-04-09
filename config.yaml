@@ -5,7 +5,7 @@ about:
   - title: Software Engineering
     description: |
       I'm primarily a developer focused in Object-Oriented Programming and Backend Web Development. Both my professional career and schooling has been focused in software development.
-      
+
       I am most familiar with the Java, C, Python, and GoLang languages. I also have some limited experience in C++, C#, JavaScript, and Scala.
 
       If you want to see some of my more notable projects, please visit the [projects](#projects) section. Or, visit my [self-hosted GitLab](https://git.geraldwu.com/gerald) or my [GitHub](https://github.com/98WuG/) to view all of them.
@@ -54,7 +54,7 @@ experience:
     description: |
       Researched, implemented, and optimized the Markov Clustering Algorithm in C# to identify clusters in relational graphs of size 100,000+ nodes and 120,000+ edges within 10 minutes. The clustering was implemented in the Sentinel Visualizer product, and allowed it to handle much larger graphs.  
       Also implemented secure, PCI-compliant payment integration on the web using Authorize.Net in ASP Classic backend and JQuery/AJAX frontend. It was a complete integration with the Authorize.Net payment gateway, including both one-time payments and long-term customer payment profiles.
-  
+
 projects:
   - title: Omgur &mdash; A FOSS private front-end for Imgur
     link: "https://git.geraldwu.com/gerald/Omgur"

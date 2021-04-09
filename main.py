@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+
+import os
 import jinja2
 import yaml
 import markdown
-import os
 
 
 def main():
