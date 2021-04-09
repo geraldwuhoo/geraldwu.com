@@ -1,5 +1,10 @@
+* {
+    margin: 0;
+}
+
 @media (prefers-color-scheme: dark) {
-    body {
+    body,
+    footer {
         color: #fbfbfb;
         background: #181818;
         text-shadow: 0 1px 0 #000000;
@@ -15,6 +20,12 @@
         border-bottom: 1px solid #aaaaaa;
         color: #aaaaaa;
     }
+    header {
+        color: #fbfbfb;
+        background: #080808;
+        text-shadow: 0 1px 0 #000000;
+        margin-bottom: 5%;
+    }
     header>aside {
         color: #aaaaaa;
     }
@@ -24,14 +35,15 @@
 }
 
 @media (prefers-color-scheme: light) {
-    body {
-        color: #333333;
+    body,
+    footer {
+        color: #222222;
         background: #fbfbfb;
         text-shadow: 0 1px 0 #ffffff;
     }
     a {
-        border-bottom: 1px solid #333333;
-        color: #333333;
+        border-bottom: 1px solid #222222;
+        color: #222222;
     }
     .grey {
         color: #888888;
@@ -39,6 +51,12 @@
     .grey a {
         border-bottom: 1px solid #888888;
         color: #888888;
+    }
+    header {
+        color: #fbfbfb;
+        background: #181818;
+        text-shadow: 0 1px 0 #000000;
+        margin-bottom: 5%;
     }
     header>aside {
         color: #888888;
@@ -48,25 +66,40 @@
     }
 }
 
-body {
+header,
+main,
+footer {
+    font:1.2em/1.62 sans-serif;
+    font-size: 16px;
+}
+
+main,
+footer {
     margin: 1em auto;
     max-width: 50em;
     padding: 0 .62em;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 h1, h2, h3 {
-    line-height: 1.4;
+    line-height: 1.6;
+    padding-top: 1em;
+}
+
+p {
+    padding-top: 0.5em;
 }
 
 header {
     padding: 15% 0;
 }
 
+header>h1 {
+    font-size: xxx-large;
+}
+
 @media print {
-    body {
+    main {
         max-width: none
     }
 }
@@ -106,15 +139,32 @@ header>aside>a {
     border-bottom: 0px;
 }
 
+.blurb {
+    display: flex;
+    flex-direction: row;
+}
+
+.blurb .box {
+    flex: 50%;
+    padding-right: 10px;
+}
+
+@media (max-width: 800px) {
+    .blurb {
+        flex-direction: column;
+    }
+}
+
 .project {
     display: flex;
     flex-direction: row;
-    padding-bottom: 10px;
+    padding-top: 1em;
 }
 
 .project .box {
     flex: 50%;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .project .box a>img {
@@ -133,6 +183,7 @@ header>aside>a {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    padding-top:1em;
 }
 
 .service .box {

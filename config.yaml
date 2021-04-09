@@ -1,6 +1,24 @@
 title: Gerald Wu's Portfolio
 resume: "https://git.geraldwu.com/gerald/resume/-/raw/master/gerald_wu_resume.pdf"
 
+about:
+  - title: Software Engineering
+    description: |
+      I'm primarily a developer focused in Object-Oriented Programming and Backend Web Development. Both my professional career and schooling has been focused in software development.
+      
+      I am most familiar with the Java, C, Python, and GoLang languages. I also have some limited experience in C++, C#, JavaScript, and Scala.
+
+      If you want to see some of my more notable projects, please visit the [projects](#projects) section. Or, visit my [self-hosted GitLab](https://git.geraldwu.com/gerald) or my [GitHub](https://github.com/98WuG/) to view all of them.
+  - title: Information Technology
+    description: |
+      I'm a Linux systems administrator, focused on cloud-native deployments and infrastructure as code (IaC).
+
+      All of my [services](#selfhosted) are hosted on Docker on a vSphere cluster, backed by central ZFS storage exported as NFS. They are all deployed via some form of IaC with either GitLab CI/CD or via Ansible and docker-compose.
+
+      All of this is hosted on-premise on segregated VLANs with limited inter-VLAN routing rules, behind a self-built firewall/router running pfSense software.
+
+      I am also a [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714).
+
 experience:
   - company: Amazon Web Services (AWS)
     position: Software Engineer Intern

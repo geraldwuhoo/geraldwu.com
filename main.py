@@ -3,6 +3,7 @@ import yaml
 import markdown
 import os
 
+
 def main():
     config = 'config.yaml'
     template = 'index.jinja2'
@@ -16,9 +17,10 @@ def main():
     def convert(to_convert):
         for item in to_convert:
             item['description'] = markdown.markdown(item['description'])[3:-4]
-    convert(data['experience'])
-    convert(data['projects'])
-    
+    to_convert = ['about', 'experience', 'projects']
+    for i in to_convert:
+        convert(data[i])
+
     # Fill in predefined variables from GitLab CI/CD
     data['repo'] = {}
     data['commit'] = {}
@@ -28,7 +30,10 @@ def main():
     data['repo']['url'] = os.getenv('CI_PROJECT_URL', '')
     data['commit']['sha'] = os.getenv('CI_COMMIT_SHORT_SHA', 'N/A')
     if os.environ.get('CI_PROJECT_URL'):
-        data['commit']['url'] = f"{os.environ['CI_PROJECT_URL']}/commit/{os.environ['CI_COMMIT_SHA']}"
+        data['commit']['url'] = "{}/commit/{}".format(
+            os.environ['CI_PROJECT_URL'],
+            os.environ['CI_COMMIT_SHA']
+        )
     data['pipeline']['id'] = os.getenv('CI_PIPELINE_ID', 'N/A')
     data['pipeline']['url'] = os.getenv('CI_PIPELINE_URL', '')
 
@@ -42,6 +47,7 @@ def main():
         f.write(subs)
 
     return 0
+
 
 if __name__ == '__main__':
     main()
