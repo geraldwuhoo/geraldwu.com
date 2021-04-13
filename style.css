@@ -2,67 +2,76 @@
     margin: 0;
 }
 
+:root {
+    --light-bg-color: #fbfbfb;
+    --light-text-color: #333333;
+    --light-text-shadow: #ffffff;
+    --light-grey-color: #888888;
+    --dark-bg-color: #181818;
+    --dark-text-color: #fbfbfb;
+    --dark-text-shadow: #000000;
+    --dark-grey-color: #aaaaaa;
+}
+
 @media (prefers-color-scheme: dark) {
     body,
     footer {
-        color: #fbfbfb;
-        background: #181818;
-        text-shadow: 0 1px 0 #000000;
+        color: var(--dark-text-color);
+        background: var(--dark-bg-color);
+        text-shadow: 0 1px 0 var(--dark-text-shadow);
     }
     a {
-        border-bottom: 1px solid #fbfbfb;
-        color: #fbfbfb;
+        border-bottom: 1px solid var(--dark-text-color);
+        color: var(--dark-text-color);
     }
     .grey {
-        color: #aaaaaa;
+        color: var(--dark-grey-color);
     }
     .grey a {
-        border-bottom: 1px solid #aaaaaa;
-        color: #aaaaaa;
+        border-bottom: 1px solid var(--dark-grey-color);
+        color: var(--dark-grey-color);
     }
     header {
         color: #fbfbfb;
         background: #080808;
         text-shadow: 0 1px 0 #000000;
-        margin-bottom: 5%;
     }
     header>aside {
-        color: #aaaaaa;
+        color: var(--dark-grey-color);
     }
     header>aside>a {
-        color: #aaaaaa;
+        color: var(--dark-grey-color);
     }
 }
 
 @media (prefers-color-scheme: light) {
     body,
     footer {
-        color: #333333;
-        background: #fbfbfb;
-        text-shadow: 0 1px 0 #ffffff;
+        color: var(--light-text-color);
+        background: var(--light-bg-color);
+        text-shadow: 0 1px 0 var(--light-text-shadow);
     }
     a {
-        border-bottom: 1px solid #333333;
-        color: #333333;
+        border-bottom: 1px solid var(--light-text-color);
+        color: var(--light-text-color);
     }
     .grey {
-        color: #888888;
+        color: var(--light-grey-color);
     }
     .grey a {
-        border-bottom: 1px solid #888888;
-        color: #888888;
+        border-bottom: 1px solid var(--light-grey-color);
+        color: var(--light-grey-color);
     }
     header {
         color: #fbfbfb;
         background: #181818;
         text-shadow: 0 1px 0 #000000;
-        margin-bottom: 5%;
     }
     header>aside {
-        color: #888888;
+        color: var(--light-grey-color);
     }
     header>aside>a {
-        color: #888888;
+        color: var(--light-grey-color);
     }
 }
 
@@ -91,7 +100,8 @@ p {
 }
 
 header {
-    padding: 15% 0;
+    padding: 10vh 0;
+    margin-bottom: 3em;
 }
 
 header>h1 {
