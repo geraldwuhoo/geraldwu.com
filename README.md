@@ -1,8 +1,6 @@
 # geraldwu.com
 
-## Work in progress!
-
-The new and improved geraldwu.com. Now statically generated using jinja2 templating and without all the JavaScript bloat.
+[![pipeline status](https://git.geraldwu.com/gerald/geraldwu.com/badges/master/pipeline.svg)](https://git.geraldwu.com/gerald/geraldwu.com/-/commits/master)
 
 ## Why? The old website was nice and modern and responsive and flashy and \<insert buzzword here\>
 
