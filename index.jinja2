@@ -62,7 +62,19 @@
         </div>
         {% endfor %}
       </div>
+      <h2>Contact Me</h2>
+      <div class="contact">
+        <p>
+        {% for contact in data.contact %}
+        {{contact.type}}: 
+        <a target="_blank" class="grey" href="{{contact.link}}">
+          {{contact.username}}
+        </a>
+        <p>
+        {% endfor %}
+      </div>
     </main>
+
     <footer class="grey">
       <p>
         Fun fact! This static page was automatically generated and deployed by the <a href="{{data.repo.url}}">{{data.repo.path}}</a> project using GitLab CI/CD.

@@ -119,3 +119,11 @@ services:
   - title: DokuWiki
     link: "https://wiki.geraldwu.com"
     logo: "https://geraldwu.com/images/dokuwiki-logo.png"
+
+contact:
+  - type: Email
+    username: contact@geraldwu.com
+    link: "mailto:contact@geraldwu.com"
+  - type: Matrix
+    username: "@jerry:geraldwu.com"
+    link: "https://matrix.to/#/@jerry:geraldwu.com"
