@@ -1,5 +1,6 @@
 title: Gerald Wu's Portfolio
 resume: "https://git.geraldwu.com/gerald/resume/-/raw/master/gerald_wu_resume.pdf"
+blog: "https://blog.geraldwu.com"
 
 about:
   - title: Software Engineering
@@ -87,6 +88,10 @@ services:
     link: "https://element.geraldwu.com"
     logo: "https://geraldwu.com/images/element-logo.png"
 
+  - title: WriteFreely
+    link: "https://blog.geraldwu.com"
+    logo: "https://geraldwu.com/images/writefreely-logo.png"
+
   - title: EteSync
     link: "https://etesync.geraldwu.com"
     logo: "https://geraldwu.com/images/etesync-logo.png"
@@ -102,10 +107,6 @@ services:
   - title: PrivateBin
     link: "https://paste.geraldwu.com"
     logo: "https://geraldwu.com/images/privatebin-logo.png"
-
-  - title: Firefox Sync
-    link: "https://sync.geraldwu.com"
-    logo: "https://geraldwu.com/images/firefox-logo.png"
 
   - title: Seafile
     link: "https://seafile.geraldwu.com"
