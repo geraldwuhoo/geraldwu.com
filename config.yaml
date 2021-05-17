@@ -62,7 +62,7 @@ projects:
     language: Golang
     image: "https://geraldwu.com/images/imgur-logo.png"
     description: |
-      Omgur is a free and open-source private front-end proxy for Imgur, inspired by [Invidious](https://github.com/iv-org/invidious), [Nitter](https://github.com/zedeus/nitter), and [Teddit](https://github.com/teddit-net/teddit). Omgur runs with no JavaScript, ads, or tracking. All requests are proxied through the Omgur backend to prevent Imgur from tracking IP or JavaScript fingerprint. Easily self-hostable through the Docker image provided by Gitlab CI/CD configuration.
+      Omgur is a free and open-source private front-end proxy for Imgur, inspired by [Invidious](https://github.com/iv-org/invidious), [Nitter](https://github.com/zedeus/nitter), and [Teddit](https://codeberg.org/teddit/teddit). Omgur runs with no JavaScript, ads, or tracking. All requests are proxied through the Omgur backend to prevent Imgur from tracking IP or JavaScript fingerprint. Easily self-hostable through the Docker image provided by Gitlab CI/CD configuration.
 
   - title: Quantum Mechanical Wave Function Propagation
     link: "https://git.geraldwu.com/gerald/QuantumEvolution"

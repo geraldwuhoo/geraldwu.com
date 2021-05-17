@@ -64,13 +64,13 @@
       </div>
       <h2>Contact Me</h2>
       <div class="contact">
-        <p>
         {% for contact in data.contact %}
+        <p>
         {{contact.type}}: 
         <a target="_blank" class="grey" href="{{contact.link}}">
           {{contact.username}}
         </a>
-        <p>
+        </p>
         {% endfor %}
       </div>
     </main>

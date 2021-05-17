@@ -18,7 +18,7 @@ def main():
     # Convert descriptions from markdown to html
     def convert(to_convert):
         for item in to_convert:
-            item['description'] = markdown.markdown(item['description'])[3:-4]
+            item['description'] = markdown.markdown(item['description'])
     to_convert = ['about', 'experience', 'projects']
     for i in to_convert:
         convert(data[i])
