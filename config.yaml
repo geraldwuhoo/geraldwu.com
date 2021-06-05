@@ -92,6 +92,18 @@ services:
     link: "https://blog.geraldwu.com"
     logo: "https://geraldwu.com/images/writefreely-logo.png"
 
+  - title: NextCloud
+    link: "https://cloud.geraldwu.com"
+    logo: "https://geraldwu.com/images/nextcloud-logo.png"
+
+  - title: Collabora Online
+    link: "https://collabora.geraldwu.com"
+    logo: "https://geraldwu.com/images/collabora-logo.png"
+
+  - title: Seafile
+    link: "https://seafile.geraldwu.com"
+    logo: "https://geraldwu.com/images/seafile-logo.png"
+
   - title: EteSync
     link: "https://etesync.geraldwu.com"
     logo: "https://geraldwu.com/images/etesync-logo.png"
@@ -107,10 +119,6 @@ services:
   - title: PrivateBin
     link: "https://paste.geraldwu.com"
     logo: "https://geraldwu.com/images/privatebin-logo.png"
-
-  - title: Seafile
-    link: "https://seafile.geraldwu.com"
-    logo: "https://geraldwu.com/images/seafile-logo.png"
 
   - title: Calibre-Web
     link: "https://calibre.geraldwu.com"
