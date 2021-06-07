@@ -128,6 +128,10 @@ services:
     link: "https://wiki.geraldwu.com"
     logo: "https://geraldwu.com/images/dokuwiki-logo.png"
 
+  - title: Shynet
+    link: "https://shynet.geraldwu.com"
+    logo: "https://geraldwu.com/images/shynet-logo.png"
+
 contact:
   - type: Email
     username: contact@geraldwu.com
