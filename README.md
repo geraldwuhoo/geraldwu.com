@@ -27,7 +27,7 @@ The new `index.html` and `style.css` combined are less than 10KB! The final page
 ## The roadmap
 
 - [x] Add "About Me" section
-- [ ] Add footer with contact info
+- [x] Add footer with contact info
 - [x] Optimize images
 - [x] GitLab CI/CD to automatically deploy changes to geraldwu.com
 - [x] gzip compression at the webserver
