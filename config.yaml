@@ -112,6 +112,10 @@ services:
     link: "https://pim.geraldwu.com"
     logo: "https://geraldwu.com/images/etesync-logo.png"
 
+  - title: Paperless-ng
+    link: "https://paperless.geraldwu.com"
+    logo: "https://geraldwu.com/images/paperless-logo.png"
+
   - title: Gotify
     link: "https://gotify.geraldwu.com"
     logo: "https://geraldwu.com/images/gotify-logo.png"
