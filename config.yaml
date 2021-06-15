@@ -133,7 +133,7 @@ services:
     logo: "https://geraldwu.com/images/dokuwiki-logo.png"
 
   - title: Shynet
-    link: "https://shynet.geraldwu.com"
+    link: "https://shy.geraldwu.com"
     logo: "https://geraldwu.com/images/shynet-logo.png"
 
 contact:
