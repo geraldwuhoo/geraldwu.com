@@ -25,36 +25,47 @@ experience:
     position: Software Engineer Intern
     dates: May 2020 - Aug 2020
     description: |
-      I worked with the Amazon Connect team &mdash; a cloud-based call center as a service product running on AWS. I worked on migrating to Safe Dynamic Config (SDC) as the backend service for Feature Access Control (FAC).  
-      To accomplish this task, I wrote a library to pull deployed SDCs from remote and parse/evaluate their contents to allow/deny access to certain features on a per-user basis. In addition, I deployed a configuration pipeline to implement strict templating and SDC generation for configuration as code purposes. Since this was the beginning of my team's migration, both of these tasks were written from scratch.  
-      I also implemented a proof-of-concept for my project, showing a demo wherein an existing FAC implementation was replaced with my new library.
+      * Worked with the **Amazon Connect** team &mdash; a **cloud-based** call center as a service product running on **AWS**
+      * Built a deployment pipeline for **Safe Dynamic Config (SDC)**
+          * Implemented strict templating and config generation to allow for configuration as code
+      * Library to pull deployed **SDCs** from remote and parse them for **Feature Access Control (FAC)** (Java)
+          * Created this library from scratch &mdash; library was not based on an existing codebase
+          * Part of an existing effort to migrate **Feature Access Control** from a flat config file in **S3** to a fast, compartmentalized, safe, dynamic config **deployment as code**
+      * Implemented a proof-of-concept utilizing the library to replace the existing **FAC** implementation
 
   - company: Brown University
     position: Computer Science Teaching Assistant
     dates: Sep 2019 - Dec 2019
     description: |
-      Undergraduate teaching assistant for CSCI 1270: Database Management Systems. This is an intermediate-level course that covers both database design and theoretical database concepts.
+      * Undergraduate teaching assistant for CSCI 1270: **Database Management Systems**
+      * **Intermediate-level** CS course that covers both database design and theoretical database concepts
 
   - company: Leidos
     position: Software Engineer Intern
     dates: May 2019 - Aug 2019
     description: |
-      Worked on an autonomous (self-driving) seafaring vessel. I was a primary designer of the systems architecture for a virtualization/containerization approach.  
-      I researched, proposed, and implemented various architectures, including VMWare vSphere, VMWare vSAN, Red Hat OpenShift, and bare Kubernetes.  
-      In addition, I was part of the core team in charge of the software migration effort between major operating system releases. Most of the codebase was in C++/Python, and required non-trivial rewrites to match new library versions.
+      * Part of software development team working on **autonomous** (self-driving) sea vessels (C++/Python)
+      * Core member of **systems architecture** team for next-gen virtualization approach (VMWare/Red Hat/Kubernetes)
+          * Researched, evaluated, proposed, and implemented various architectures involving **VMWare** clustering, VMWare **vSAN**, Red Hat **OpenShift**, and **Kubernetes**
+          * Final proposed systems architecture approved for implementation
+      * Major contributor of **software migration** process from Red Hat 6 to 7 (C++/Python)
+          * Significant code rewriting to fit a **microservice** approach
 
   - company: Brown University
     position: Applied Mathematics Teaching Assistant
     dates: Sep 2018 - Dec 2018
     description: |
-      Undergraduate teaching assistant for APMA 0340: Methods of Applied Mathematics II. This course covers both nonlinear ordinary differential equations and partial differential equations from an applied mathematics perspective.
+      * Undergraduate teaching assistant for APMA 0340: Methods of Applied Mathematics II
+      * Applied math course that covers both **non-linear ordinary differential equations** and **partial differential equations**
 
   - company: FMS Inc.
     position: Software Engineer Intern
     dates: May 2018 - Aug 2018
     description: |
-      Researched, implemented, and optimized the Markov Clustering Algorithm in C# to identify clusters in relational graphs of size 100,000+ nodes and 120,000+ edges within 10 minutes. The clustering was implemented in the Sentinel Visualizer product, and allowed it to handle much larger graphs.  
-      Also implemented secure, PCI-compliant payment integration on the web using Authorize.Net in ASP Classic backend and JQuery/AJAX frontend. It was a complete integration with the Authorize.Net payment gateway, including both one-time payments and long-term customer payment profiles.
+      * Cluster analysis in *large-scale graphs* (C#)
+          * Researched, implemented, and optimized the **Markov Clustering Algorithm** (MCL) to identify clusters in relational graphs of size **100,000+** nodes and **120,000+** edges in less than **10 minutes**
+      * Implemented secure, PCI-compliant payment integration on the web using Authorize.Net (ASP Classic)
+          * Complete integration with the **Authorize.Net** payment gateway, including both **one-time** payments and long-term customer **payment profiles**
 
 projects:
   - title: Omgur &mdash; A FOSS private front-end for Imgur

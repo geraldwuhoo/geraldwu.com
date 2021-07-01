@@ -73,6 +73,17 @@
     }
 }
 
+ul {
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+ul li:before {
+    content: '\2014';
+    position: absolute;
+    margin-left: -20px;
+}
+
 header, main, footer {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
