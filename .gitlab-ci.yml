@@ -20,18 +20,7 @@ meta-build-resume-image:
     changes:
       - meta/Dockerfile
 
-build-website:
-  image: python:3-alpine
-  stage: build
-  script:
-    - pip install -r requirements.txt
-    - python3 main.py
-  artifacts:
-    paths:
-      - index.html
-      - style.css
-
-build-resume:
+build:
   image: "$CI_REGISTRY_IMAGE/$RESUME_IMAGE"
   stage: build
   script:
@@ -40,6 +29,8 @@ build-resume:
     - wkhtmltopdf --page-size letter resume.html resume.pdf
   artifacts:
     paths:
+      - index.html
+      - style.css
       - resume.pdf
 
 deploy:
