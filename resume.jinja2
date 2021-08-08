@@ -1,0 +1,42 @@
+Gerald Wu
+=========
+
+----
+
+> Software Engineer · Computer Science · IT
+
+----
+
+Skills
+------
+
+{% for skill in data.skills %}
+{{skill.type}}
+:   {{skill.description}}
+{% endfor %}
+
+Education
+---------
+
+{% for schooling in data.education %}
+{{ schooling.dates }}
+:   **{{schooling.school}}**
+
+    {{schooling.degree}}
+{% endfor %}
+
+Experience
+----------
+
+{% for job in data.experience %}
+{{job.dates}}
+:   **{{job.position}}**
+
+    {{job.company}}
+
+    {{job.description}}
+{% endfor %}
+
+----
+
+> <{{data.contact[0].username}}>

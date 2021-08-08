@@ -6,15 +6,7 @@ import yaml
 import markdown
 
 
-def main():
-    config = 'config.yaml'
-    template = 'index.jinja2'
-    outputfile = 'index.html'
-
-    # Load in config file
-    with open(config) as f:
-        data = yaml.safe_load(f)
-
+def generate_website_data(data):
     # Convert descriptions from markdown to html
     def convert(to_convert):
         for item in to_convert:
@@ -39,14 +31,36 @@ def main():
     data['pipeline']['id'] = os.getenv('CI_PIPELINE_ID', 'N/A')
     data['pipeline']['url'] = os.getenv('CI_PIPELINE_URL', '')
 
+
+def execute_template(data, template, output_file):
     # Execute the jinja2 template
     subs = jinja2.Environment(
         loader=jinja2.FileSystemLoader('./')
     ).get_template(template).render(data=data)
 
     # Save jinja2 templating result
-    with open(outputfile, 'w') as f:
+    with open(output_file, 'w') as f:
         f.write(subs)
+
+
+def main():
+    config = 'config.yaml'
+    website_template = 'index.jinja2'
+    website_file = 'index.html'
+
+    # Load in config file
+    with open(config) as f:
+        data = yaml.safe_load(f)
+
+    # Modify data for website
+    website_data = data.copy()
+    generate_website_data(website_data)
+
+    # Create website
+    execute_template(website_data, website_template, website_file)
+
+    # Create markdown resume
+    execute_template(data, "resume.jinja2", "resume.md")
 
     return 0
 

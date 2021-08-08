@@ -20,7 +20,26 @@ about:
 
       I am also a [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714).
 
+education:
+  - school: Brown University
+    degree: Sc.B. Computer Science, A.B. Applied Mathematics
+    dates: 2017 - 2021
+
+skills:
+  - type: Programming
+    description: |
+      Java, C, GoLang, C++, Python, SQL
+  - type: Other
+    description: |
+      [Red Hat Certified](https://rhtapps.redhat.com/verify/?certId=180-132-714), VMWare vSphere/vSAN, Kubernetes, Docker, Ansible, LaTeX, Git
+
 experience:
+  - company: Google
+    position: Software Engineer
+    dates: Jun 2021 - PRESENT
+    description: |
+      * Pre-purchase modeling under YouTube Commerce
+
   - company: Amazon Web Services (AWS)
     position: Software Engineer Intern
     dates: May 2020 - Aug 2020
@@ -28,10 +47,8 @@ experience:
       * Worked with the **Amazon Connect** team &mdash; a **cloud-based** call center as a service product running on **AWS**
       * Built a deployment pipeline for **Safe Dynamic Config (SDC)**
           * Implemented strict templating and config generation to allow for configuration as code
-      * Library to pull deployed **SDCs** from remote and parse them for **Feature Access Control (FAC)** (Java)
-          * Created this library from scratch &mdash; library was not based on an existing codebase
+      * Created library from scratch to pull deployed **SDCs** from remote and parse them for **Feature Access Control (FAC)** (Java)
           * Part of an existing effort to migrate **Feature Access Control** from a flat config file in **S3** to a fast, compartmentalized, safe, dynamic config **deployment as code**
-      * Implemented a proof-of-concept utilizing the library to replace the existing **FAC** implementation
 
   - company: Brown University
     position: Computer Science Teaching Assistant
@@ -62,7 +79,7 @@ experience:
     position: Software Engineer Intern
     dates: May 2018 - Aug 2018
     description: |
-      * Cluster analysis in *large-scale graphs* (C#)
+      * Cluster analysis in **large-scale graphs** (C#)
           * Researched, implemented, and optimized the **Markov Clustering Algorithm** (MCL) to identify clusters in relational graphs of size **100,000+** nodes and **120,000+** edges in less than **10 minutes**
       * Implemented secure, PCI-compliant payment integration on the web using Authorize.Net (ASP Classic)
           * Complete integration with the **Authorize.Net** payment gateway, including both **one-time** payments and long-term customer **payment profiles**
@@ -149,8 +166,8 @@ services:
 
 contact:
   - type: Email
-    username: contact@geraldwu.com
-    link: "mailto:contact@geraldwu.com"
+    username: gw@geraldwu.com
+    link: "mailto:gw@geraldwu.com"
   - type: Matrix
     username: "@jerry:geraldwu.com"
     link: "https://matrix.to/#/@jerry:geraldwu.com"

@@ -1,8 +1,26 @@
 stages:
+  - prepare
   - build
   - deploy
 
-build:
+variables:
+  RESUME_IMAGE: "build-resume"
+
+meta-build-resume-image:
+  image: docker:stable
+  services:
+    - docker:dind
+  stage: prepare
+  script:
+    - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+    - docker build -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest" -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA" -f meta/Dockerfile .
+    - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest"
+    - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA"
+  only:
+    changes:
+      - meta/Dockerfile
+
+build-website:
   image: python:3-alpine
   stage: build
   script:
@@ -12,6 +30,17 @@ build:
     paths:
       - index.html
       - style.css
+
+build-resume:
+  image: "$CI_REGISTRY_IMAGE/$RESUME_IMAGE"
+  stage: build
+  script:
+    - python3 main.py
+    - pandoc --self-contained --css resume_style.css --output resume.html resume.md
+    - wkhtmltopdf --page-size letter resume.html resume.pdf
+  artifacts:
+    paths:
+      - resume.pdf
 
 deploy:
   image: alpine:3
@@ -26,4 +55,4 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
     - export DEPLOY_BRANCH="$([ "$CI_COMMIT_BRANCH" = "master" ] || echo "$CI_COMMIT_BRANCH")"
   script:
-    - scp index.html style.css "${SITE_PATH}/${DEPLOY_BRANCH}"
+    - scp index.html style.css resume.pdf "${SITE_PATH}/${DEPLOY_BRANCH}"

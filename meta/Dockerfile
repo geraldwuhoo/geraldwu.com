@@ -1,0 +1,13 @@
+FROM ubuntu:20.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+COPY requirements.txt .
+
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    python3-pip \
+    pandoc \
+    wkhtmltopdf \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir -r requirements.txt
