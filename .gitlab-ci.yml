@@ -48,4 +48,4 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
     - export DEPLOY_BRANCH="$([ "$CI_COMMIT_BRANCH" = "master" ] || echo "$CI_COMMIT_BRANCH")"
   script:
-    - scp index.html,style.css,resume.pdf "${SITE_PATH}/${DEPLOY_BRANCH}"
+    - scp index.html style.css resume.pdf "${SITE_PATH}/${DEPLOY_BRANCH}"
