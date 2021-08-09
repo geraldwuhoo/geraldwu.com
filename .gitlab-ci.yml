@@ -5,6 +5,7 @@ stages:
 
 variables:
   RESUME_IMAGE: "build-resume"
+  OUTPUT_DIR: "out"
 
 meta-build-resume-image:
   image: docker:stable
@@ -25,13 +26,13 @@ build:
   stage: build
   script:
     - python3 main.py
-    - pandoc --self-contained --css resume_style.css --output resume.html resume.md
-    - wkhtmltopdf --page-size letter resume.html resume.pdf
+    - pandoc --self-contained --css resume/style.css --output "$OUTPUT_DIR/resume.html" "$OUTPUT_DIR/resume.md"
+    - wkhtmltopdf --page-size letter "$OUTPUT_DIR/resume.html" "$OUTPUT_DIR/resume.pdf"
   artifacts:
     paths:
-      - index.html
-      - style.css
-      - resume.pdf
+      - "$OUTPUT_DIR/index.html"
+      - "$OUTPUT_DIR/style.css"
+      - "$OUTPUT_DIR/resume.pdf"
 
 deploy:
   image: alpine:3
@@ -46,4 +47,4 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
     - export DEPLOY_BRANCH="$([ "$CI_COMMIT_BRANCH" = "master" ] || echo "$CI_COMMIT_BRANCH")"
   script:
-    - scp index.html style.css resume.pdf "${SITE_PATH}/${DEPLOY_BRANCH}"
+    - scp "$OUTPUT_DIR"/{index.html,style.css,resume.pdf} "${SITE_PATH}/${DEPLOY_BRANCH}"

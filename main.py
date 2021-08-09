@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+from argparse import ArgumentParser
 import jinja2
 import yaml
 import markdown
@@ -44,12 +45,22 @@ def execute_template(data, template, output_file):
 
 
 def main():
-    config = 'config.yaml'
-    website_template = 'index.jinja2'
-    website_file = 'index.html'
+    # Parse the cli arguments
+    parser = ArgumentParser()
+    parser.add_argument('-o', '--output-dir', type=str, help='Output dir')
+    args = parser.parse_args()
+
+    if args.output_dir is None:
+        output_dir = 'out'
+    else:
+        output_dir = args.output_dir
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        print('{} directory not found, creating.'.format(output_dir))
 
     # Load in config file
-    with open(config) as f:
+    with open('config.yaml') as f:
         data = yaml.safe_load(f)
 
     # Modify data for website
@@ -57,10 +68,12 @@ def main():
     generate_website_data(website_data)
 
     # Create website
-    execute_template(website_data, website_template, website_file)
+    execute_template(website_data, 'website/index.jinja2',
+                     '{}/index.html'.format(output_dir))
 
     # Create markdown resume
-    execute_template(data, "resume.jinja2", "resume.md")
+    execute_template(data, 'resume/resume.jinja2',
+                     '{}/resume.md'.format(output_dir))
 
     return 0
 
