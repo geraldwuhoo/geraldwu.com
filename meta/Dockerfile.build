@@ -5,6 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 COPY requirements.txt .
 
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    make \
     python3-pip \
     pandoc \
     wkhtmltopdf \

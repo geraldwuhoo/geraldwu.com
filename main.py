@@ -60,7 +60,7 @@ def main():
         print('{} directory not found, creating.'.format(output_dir))
 
     # Load in config file
-    with open('config.yaml') as f:
+    with open('config.yml', 'r') as f:
         data = yaml.safe_load(f)
 
     # Modify data for website

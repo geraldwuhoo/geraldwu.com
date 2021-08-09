@@ -20,12 +20,12 @@ variables:
 meta-build-resume-image:
   <<: *build_meta
   script:
-    - docker build -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest" -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA" -f meta/Dockerfile .
+    - docker build -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest" -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA" -f meta/Dockerfile.build .
     - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest"
     - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA"
   only:
     changes:
-      - meta/Dockerfile
+      - meta/Dockerfile.build
 
 meta-build-ssh-image:
   <<: *build_meta
@@ -42,9 +42,7 @@ build:
   image: "$CI_REGISTRY_IMAGE/$RESUME_IMAGE"
   stage: build
   script:
-    - python3 main.py
-    - pandoc --self-contained --css resume/style.css --output "$OUTPUT_DIR/resume.html" "$OUTPUT_DIR/resume.md"
-    - wkhtmltopdf --page-size letter "$OUTPUT_DIR/resume.html" "$OUTPUT_DIR/resume.pdf"
+    - make
     - cp -av "$OUTPUT_DIR"/* website/style.css .
   artifacts:
     paths:

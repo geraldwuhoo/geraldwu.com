@@ -1,5 +1,6 @@
 venv/
 .vscode/
+out/
 index.html
 resume.md
 resume.html
