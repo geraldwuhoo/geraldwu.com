@@ -28,11 +28,12 @@ build:
     - python3 main.py
     - pandoc --self-contained --css resume/style.css --output "$OUTPUT_DIR/resume.html" "$OUTPUT_DIR/resume.md"
     - wkhtmltopdf --page-size letter "$OUTPUT_DIR/resume.html" "$OUTPUT_DIR/resume.pdf"
+    - cp -av "$OUTPUT_DIR"/* website/style.css .
   artifacts:
     paths:
-      - "$OUTPUT_DIR/index.html"
-      - "$OUTPUT_DIR/style.css"
-      - "$OUTPUT_DIR/resume.pdf"
+      - index.html
+      - style.css
+      - resume.pdf
 
 deploy:
   image: alpine:3
@@ -47,4 +48,4 @@ deploy:
     - chmod 644 ~/.ssh/known_hosts
     - export DEPLOY_BRANCH="$([ "$CI_COMMIT_BRANCH" = "master" ] || echo "$CI_COMMIT_BRANCH")"
   script:
-    - scp "$OUTPUT_DIR"/{index.html,style.css,resume.pdf} "${SITE_PATH}/${DEPLOY_BRANCH}"
+    - scp index.html,style.css,resume.pdf "${SITE_PATH}/${DEPLOY_BRANCH}"
