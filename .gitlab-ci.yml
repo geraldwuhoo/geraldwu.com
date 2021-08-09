@@ -5,21 +5,38 @@ stages:
 
 variables:
   RESUME_IMAGE: "build-resume"
+  SSH_IMAGE: "ssh"
   OUTPUT_DIR: "out"
 
-meta-build-resume-image:
+.build_meta: &build_meta
   image: docker:stable
   services:
     - docker:stable-dind
   stage: prepare
-  script:
+  before_script:
+    - docker info
     - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+
+meta-build-resume-image:
+  <<: *build_meta
+  script:
     - docker build -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest" -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA" -f meta/Dockerfile .
     - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest"
     - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA"
   only:
     changes:
       - meta/Dockerfile
+
+meta-build-ssh-image:
+  <<: *build_meta
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE/$SSH_IMAGE:latest" -t "$CI_REGISTRY_IMAGE/$SSH_IMAGE:$CI_COMMIT_SHORT_SHA" -f meta/Dockerfile.ssh .
+    - docker push "$CI_REGISTRY_IMAGE/$SSH_IMAGE:latest"
+    - docker push "$CI_REGISTRY_IMAGE/$SSH_IMAGE:$CI_COMMIT_SHORT_SHA"
+  only:
+    changes:
+      - meta/Dockerfile.ssh
+
 
 build:
   image: "$CI_REGISTRY_IMAGE/$RESUME_IMAGE"
@@ -36,13 +53,9 @@ build:
       - resume.pdf
 
 deploy:
-  image: alpine:3
+  image: "$CI_REGISTRY_IMAGE/$SSH_IMAGE"
   stage: deploy
   before_script:
-    - 'which ssh-agent || (apk update && apk add openssh-client)'
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
-    - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | ssh-add -
     - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
     - chmod 644 ~/.ssh/known_hosts
