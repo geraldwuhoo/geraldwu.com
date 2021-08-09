@@ -2,5 +2,4 @@ FROM alpine:3
 
 RUN apk add --no-cache openssh-client \
     && mkdir -p ~/.ssh \
-    && chmod 700 ~/.ssh \
-    && eval $(ssh-agent -s)
+    && chmod 700 ~/.ssh
