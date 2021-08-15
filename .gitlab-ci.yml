@@ -43,7 +43,7 @@ build:
   stage: build
   script:
     - make
-    - cp -av "$OUTPUT_DIR"/* website/style.css .
+    - cp -av "$OUTPUT_DIR"/* .
   artifacts:
     paths:
       - index.html
