@@ -24,15 +24,6 @@
         </div>
         {% endfor %}
       </div>
-      <h2 id="experience">Experience</h2>
-      {% for job in data.experience %}
-      <p class="job">
-        <div class="left"><strong>{{job.company}}</strong></div>
-        <div class="right grey">{{job.dates}}</div><br>
-        <div class="grey"><em>{{job.position}}</em></div>
-        {{job.description}}
-      </p>
-      {% endfor %}
 
       <h2 id="projects">Projects</h2>
       {% for project in data.projects %}
