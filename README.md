@@ -1,6 +1,6 @@
 # geraldwu.com
 
-[![pipeline status](https://git.geraldwu.com/gerald/geraldwu.com/badges/master/pipeline.svg)](https://git.geraldwu.com/gerald/geraldwu.com/-/commits/master)
+[![pipeline status](https://gitlab.wuhoo.xyz/jerry/geraldwu.com/badges/master/pipeline.svg)](https://git.wuhoo.xyz/jerry/geraldwu.com/-/commits/master)
 
 ## Why? The old website was nice and modern and responsive and flashy and \<insert buzzword here\>
 

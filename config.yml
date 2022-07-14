@@ -28,7 +28,7 @@ education:
 skills:
   - type: Programming
     description: |
-      Java, C, GoLang, C++, Python, SQL
+      Java, C, GoLang, C++, Python, Rust, SQL
   - type: Other
     description: |
       [Red Hat Certified](https://rhtapps.redhat.com/verify/?certId=180-132-714), VMWare vSphere/vSAN, Kubernetes, Docker, Ansible, LaTeX, Git

@@ -1,0 +1,6 @@
+.git
+.vscode
+.gitlab-ci.yml
+meta
+out
+venv

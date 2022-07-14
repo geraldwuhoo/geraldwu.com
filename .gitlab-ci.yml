@@ -1,63 +1,47 @@
 stages:
-  - prepare
   - build
-  - deploy
+  - push
 
 variables:
-  RESUME_IMAGE: "build-resume"
-  SSH_IMAGE: "ssh"
-  OUTPUT_DIR: "out"
-
-.build_meta: &build_meta
-  image: docker:stable
-  services:
-    - docker:stable-dind
-  stage: prepare
-  before_script:
-    - docker info
-    - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
-
-meta-build-resume-image:
-  <<: *build_meta
-  script:
-    - docker build -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest" -t "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA" -f meta/Dockerfile.build .
-    - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:latest"
-    - docker push "$CI_REGISTRY_IMAGE/$RESUME_IMAGE:$CI_COMMIT_SHORT_SHA"
-  only:
-    changes:
-      - meta/Dockerfile.build
-
-meta-build-ssh-image:
-  <<: *build_meta
-  script:
-    - docker build -t "$CI_REGISTRY_IMAGE/$SSH_IMAGE:latest" -t "$CI_REGISTRY_IMAGE/$SSH_IMAGE:$CI_COMMIT_SHORT_SHA" -f meta/Dockerfile.ssh .
-    - docker push "$CI_REGISTRY_IMAGE/$SSH_IMAGE:latest"
-    - docker push "$CI_REGISTRY_IMAGE/$SSH_IMAGE:$CI_COMMIT_SHORT_SHA"
-  only:
-    changes:
-      - meta/Dockerfile.ssh
-
+  DOCKERIO_MIRROR: hub.wuhoo.xyz
 
 build:
-  image: "$CI_REGISTRY_IMAGE/$RESUME_IMAGE"
   stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.8.1-debug
+    entrypoint: [""]
   script:
-    - make
-    - cp -av "$OUTPUT_DIR"/* .
+    - >-
+      /kaniko/executor
+      --registry-mirror "${DOCKERIO_MIRROR}"
+      --build-arg "CI_PROJECT_PATH"
+      --build-arg "CI_PROJECT_PATH"
+      --build-arg "CI_PROJECT_URL"
+      --build-arg "CI_COMMIT_SHORT_SHA"
+      --build-arg "CI_COMMIT_SHA"
+      --build-arg "CI_PIPELINE_ID"
+      --build-arg "CI_PIPELINE_URL"
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination=image
+      --no-push
+      --tarPath image.tar
   artifacts:
+    untracked: false
+    expire_in: 30 days
     paths:
-      - index.html
-      - style.css
-      - resume.pdf
+      - image.tar
+    when: on_success
 
-deploy:
-  image: "$CI_REGISTRY_IMAGE/$SSH_IMAGE"
-  stage: deploy
-  before_script:
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | ssh-add -
-    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
-    - export DEPLOY_BRANCH="$([ "$CI_COMMIT_BRANCH" = "master" ] || echo "$CI_COMMIT_BRANCH")"
+push:
+  stage: push
+  image:
+    name: gcr.io/go-containerregistry/crane/debug:v0.9.0
+    entrypoint: [""]
   script:
-    - scp index.html style.css resume.pdf "${SITE_PATH}/${DEPLOY_BRANCH}"
+    - crane auth login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
+    - crane push image.tar ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
+    - crane push image.tar ${CI_REGISTRY_IMAGE}:latest
+  needs:
+    - build
+
