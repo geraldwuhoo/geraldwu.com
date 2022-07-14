@@ -1,9 +1,35 @@
 stages:
+  - analysis
   - build
   - push
 
 variables:
   DOCKERIO_MIRROR: hub.wuhoo.xyz
+
+.analysis_meta: &analysis_meta
+  image: "registry.wuhoo.xyz/jerry/python-cicd:latest"
+  stage: analysis
+  before_script:
+    - pip install --no-cache-dir -r requirements.txt
+
+mypy:
+  <<: *analysis_meta
+  script:
+    - pwd
+    - ls -l
+    - mypy --install-types --non-interactive ./*.py
+    - python -m mypy ./*.py
+
+flake8:
+  <<: *analysis_meta
+  script:
+    - flake8 --max-line-length=80 ./*.py
+
+pylint:
+  <<: *analysis_meta
+  allow_failure: true
+  script:
+    - pylint -d C0301 ./*.py
 
 build:
   stage: build
@@ -26,6 +52,9 @@ build:
       --destination=image
       --no-push
       --tarPath image.tar
+  needs:
+    - mypy
+    - flake8
   artifacts:
     untracked: false
     expire_in: 30 days
@@ -44,4 +73,6 @@ push:
     - crane push image.tar ${CI_REGISTRY_IMAGE}:latest
   needs:
     - build
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
 

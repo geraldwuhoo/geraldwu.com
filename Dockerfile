@@ -1,5 +1,5 @@
 # Build container stage
-FROM docker.io/library/ubuntu:22.04 AS build
+FROM docker.io/library/ubuntu:jammy AS build
 
 ARG DEBIAN_FRONTEND=noninteractive
 
