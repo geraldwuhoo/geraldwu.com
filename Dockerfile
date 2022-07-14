@@ -10,11 +10,12 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     wkhtmltopdf \
     && rm -rf /var/lib/apt/lists/*
 
-COPY . /site
 WORKDIR /site
+COPY requirements.txt /site
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+COPY . /site
 ARG CI_PROJECT_PATH
 ARG CI_PROJECT_URL
 ARG CI_COMMIT_SHORT_SHA
