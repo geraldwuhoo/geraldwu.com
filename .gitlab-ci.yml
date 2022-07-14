@@ -36,6 +36,9 @@ build:
   image:
     name: gcr.io/kaniko-project/executor:v1.8.1-debug
     entrypoint: [""]
+  before_script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(printf "%s:%s" "${CI_REGISTRY_USER}" "${CI_REGISTRY_PASSWORD}" | base64 | tr -d '\n')\"}}}" > /kaniko/.docker/config.json
   script:
     - >-
       /kaniko/executor
@@ -47,6 +50,9 @@ build:
       --build-arg "CI_COMMIT_SHA"
       --build-arg "CI_PIPELINE_ID"
       --build-arg "CI_PIPELINE_URL"
+      --cache=true
+      --cache-repo "${CI_REGISTRY_IMAGE}"
+      --cache-ttl 720h0m0s
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination=image
