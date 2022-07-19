@@ -102,67 +102,67 @@ projects:
 services:
   - title: GitLab CE
     link: "https://git.geraldwu.com"
-    logo: "https://geraldwu.com/images/gitlab-logo.png"
+    logo: "/images/gitlab-logo.png"
 
   - title: GitLab Container Registry
     link: "https://git.geraldwu.com/gerald/omgur/container_registry"
-    logo: "https://geraldwu.com/images/gitlab-logo.png"
+    logo: "/images/gitlab-logo.png"
 
   - title: Matrix Synapse
     link: "https://synapse.geraldwu.com"
-    logo: "https://geraldwu.com/images/matrix-logo.png"
+    logo: "/images/matrix-logo.png"
 
   - title: Element
     link: "https://element.geraldwu.com"
-    logo: "https://geraldwu.com/images/element-logo.png"
+    logo: "/images/element-logo.png"
 
   - title: WriteFreely
     link: "https://blog.geraldwu.com"
-    logo: "https://geraldwu.com/images/writefreely-logo.png"
+    logo: "/images/writefreely-logo.png"
 
   - title: NextCloud
     link: "https://cloud.geraldwu.com"
-    logo: "https://geraldwu.com/images/nextcloud-logo.png"
+    logo: "/images/nextcloud-logo.png"
 
   - title: Collabora Online
     link: "https://collabora.geraldwu.com"
-    logo: "https://geraldwu.com/images/collabora-logo.png"
+    logo: "/images/collabora-logo.png"
 
   - title: Seafile
     link: "https://seafile.geraldwu.com"
-    logo: "https://geraldwu.com/images/seafile-logo.png"
+    logo: "/images/seafile-logo.png"
 
   - title: EteSync
     link: "https://etesync.geraldwu.com"
-    logo: "https://geraldwu.com/images/etesync-logo.png"
+    logo: "/images/etesync-logo.png"
 
   - title: EteSync-Web
     link: "https://pim.geraldwu.com"
-    logo: "https://geraldwu.com/images/etesync-logo.png"
+    logo: "/images/etesync-logo.png"
 
   - title: Paperless-ng
     link: "https://paperless.geraldwu.com"
-    logo: "https://geraldwu.com/images/paperless-logo.png"
+    logo: "/images/paperless-logo.png"
 
   - title: Gotify
     link: "https://gotify.geraldwu.com"
-    logo: "https://geraldwu.com/images/gotify-logo.png"
+    logo: "/images/gotify-logo.png"
 
   - title: PrivateBin
     link: "https://paste.geraldwu.com"
-    logo: "https://geraldwu.com/images/privatebin-logo.png"
+    logo: "/images/privatebin-logo.png"
 
   - title: Calibre-Web
     link: "https://calibre.geraldwu.com"
-    logo: "https://geraldwu.com/images/calibre-logo.png"
+    logo: "/images/calibre-logo.png"
 
   - title: DokuWiki
     link: "https://wiki.geraldwu.com"
-    logo: "https://geraldwu.com/images/dokuwiki-logo.png"
+    logo: "/images/dokuwiki-logo.png"
 
   - title: Shynet
     link: "https://shy.geraldwu.com"
-    logo: "https://geraldwu.com/images/shynet-logo.png"
+    logo: "/images/shynet-logo.png"
 
 contact:
   - type: Email

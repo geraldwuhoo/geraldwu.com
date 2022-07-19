@@ -30,5 +30,6 @@ ENV SERVER_ROOT=/public
 WORKDIR /public
 
 COPY --from=build /site/out /public
+COPY images /public/images
 
 EXPOSE 80
