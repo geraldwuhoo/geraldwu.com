@@ -42,17 +42,6 @@
       <br>
       {% endfor %}
 
-      <h2 id="selfhosted">Self-hosted Services</h2>
-      <div class="service">
-        {% for service in data.services %}
-        <div class="box">
-          <a target="_blank" href="{{service.link}}">
-            <img src="{{service.logo}}"><br>
-            {{service.title}}
-          </a>
-        </div>
-        {% endfor %}
-      </div>
       <h2>Contact Me</h2>
       <div class="contact">
         {% for contact in data.contact %}
