@@ -1,24 +1,28 @@
 title: Gerald Wu's Portfolio
-resume: "https://geraldwu.com/resume.pdf"
+resume: "/resume.pdf"
 blog: "https://blog.geraldwu.com"
 
 about:
   - title: Software Engineering
     description: |
-      I'm primarily a developer focused in Object-Oriented Programming and Backend Web Development. Both my professional career and schooling has been focused in software development.
+      I'm primarily a developer focused in Object-Oriented Programming and Backend Systems Development. Both my professional career and schooling has been focused in software development.
+
+      In terms of professional experience, I have worked on very large scale backend systems, both at Google and Amazon.
 
       I am most familiar with the Java, C, Python, and GoLang languages. I also have some limited experience in C++, C#, JavaScript, and Scala.
 
-      If you want to see some of my more notable projects, please visit the [projects](#projects) section. Or, visit my [self-hosted GitLab](https://git.geraldwu.com/gerald) or my [GitHub](https://github.com/geraldwuhoo/) to view all of them.
-  - title: Information Technology
+      If you want to see some of my more notable projects, please visit the [projects](#projects) section. Or, visit my [self-hosted GitLab](https://gitlab.wuhoo.xyz/jerry) or my [GitHub](https://github.com/geraldwuhoo/) to view all of them.
+  - title: IT Operations
     description: |
       I'm a Linux systems administrator, focused on cloud-native deployments and infrastructure as code (IaC).
 
-      All of my [services](#selfhosted) are hosted on Docker on a vSphere cluster, backed by central ZFS storage exported as NFS. They are all deployed via some form of IaC with either GitLab CI/CD or via Ansible and docker-compose.
+      All of my [services](https://wuhoo.xyz) are hosted on an on-premise [Kubernetes](https://kubernetes.io/) cluster, deployed entirely via [Terraform](https://www.terraform.io/). Storage is backed by a [Ceph](https://ceph.io/) cluster with dynamic storage provisioning via CSI. All services are deployed via GitOps with [Flux](https://fluxcd.io/). The configuration files for Flux and Terraform can be found at [this repo](https://gitlab.wuhoo.xyz/jerry/homelab-iac).
 
-      All of this is hosted on-premise on segregated VLANs with limited inter-VLAN routing rules, behind a self-built firewall/router running pfSense software.
+      This is hosted on-premise on segregated VLANs with limited inter-VLAN routing rules, behind a self-built firewall/router running [OPNsense](https://opnsense.org/) software.
 
-      I am also a [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714).
+      I am a  
+        * [Certified Kubernetes Administrator](https://training.linuxfoundation.org/certification/verify/) (LF-inn96e0qrb)  
+        * [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714) (180-132-714)
 
 education:
   - school: Brown University
@@ -28,10 +32,12 @@ education:
 skills:
   - type: Programming
     description: |
-      Java, C, GoLang, C++, Python, Rust, SQL
-  - type: Other
+      Java, GoLang, C, C++, Python, Rust, SQL
+  - type: IT Operations
     description: |
-      [Red Hat Certified](https://rhtapps.redhat.com/verify/?certId=180-132-714), VMWare vSphere/vSAN, Kubernetes, Docker, Ansible, LaTeX, Git
+      [Certified Kubernetes Administrator](https://training.linuxfoundation.org/certification/verify/) (LF-inn96e0qrb)  
+      [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714) (180-132-714)  
+      Kubernetes, GitOps, Terraform, GitLab CI/CD, Docker, VMWare vSphere/vSAN, Ansible, LaTeX, Git
 
 experience:
   - company: Google
@@ -67,13 +73,6 @@ experience:
           * Final proposed systems architecture approved for implementation
       * Major contributor of **software migration** process from Red Hat 6 to 7 (C++/Python)
           * Significant code rewriting to fit a **microservice** approach
-
-  - company: Brown University
-    position: Applied Mathematics Teaching Assistant
-    dates: Sep 2018 - Dec 2018
-    description: |
-      * Undergraduate teaching assistant for APMA 0340: Methods of Applied Mathematics II
-      * Applied math course that covers both **non-linear ordinary differential equations** and **partial differential equations**
 
   - company: FMS Inc.
     position: Software Engineer Intern
