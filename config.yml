@@ -168,5 +168,5 @@ contact:
     username: gw@geraldwu.com
     link: "mailto:gw@geraldwu.com"
   - type: Matrix
-    username: "@jerry:geraldwu.com"
-    link: "https://matrix.to/#/@jerry:geraldwu.com"
+    username: "@jerry:wuhoo.xyz"
+    link: "https://matrix.to/#/@jerry:wuhoo.xyz"
