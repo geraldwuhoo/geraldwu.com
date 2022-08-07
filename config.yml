@@ -16,7 +16,7 @@ about:
     description: |
       I'm a Linux systems administrator, focused on cloud-native deployments and infrastructure as code (IaC).
 
-      All of my [services](https://wuhoo.xyz) are hosted on an on-premise [Kubernetes](https://kubernetes.io/) cluster, deployed entirely via [Terraform](https://www.terraform.io/). Storage is backed by a [Ceph](https://ceph.io/) cluster with dynamic storage provisioning via CSI. All services are deployed via GitOps with [Flux](https://fluxcd.io/). The configuration files for Flux and Terraform can be found at [this repo](https://gitlab.wuhoo.xyz/jerry/homelab-iac).
+      All of my [services](https://homer.wuhoo.xyz/) are hosted on an on-premise [Kubernetes](https://kubernetes.io/) cluster, deployed entirely via [Terraform](https://www.terraform.io/). Storage is backed by a [Ceph](https://ceph.io/) cluster with dynamic storage provisioning via CSI. All services are deployed via GitOps with [Flux](https://fluxcd.io/). The configuration files for Flux and Terraform can be found at [this repo](https://gitlab.wuhoo.xyz/jerry/homelab-iac).
 
       This is hosted on-premise on segregated VLANs with limited inter-VLAN routing rules, behind a self-built firewall/router running [OPNsense](https://opnsense.org/) software.
 
