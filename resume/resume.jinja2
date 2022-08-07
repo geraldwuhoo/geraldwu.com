@@ -37,6 +37,21 @@ Experience
     {{job.description}}
 {% endfor %}
 
+<div style="page-break-after: always;"></div>
+
+Projects
+--------
+
+{% for project in data.projects %}
+{{ project.language }}
+:   **{{ project.title}}**
+
+    [{{ project.link }}]({{ project.link }})
+
+    {{ project.description }}
+    <br />
+{% endfor %}
+
 ----
 
 > <{{data.contact[0].username}}>

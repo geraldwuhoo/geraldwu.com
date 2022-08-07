@@ -18,6 +18,9 @@ def generate_website_data(data):
     # Convert descriptions from markdown to html
     def convert(to_convert):
         for item in to_convert:
+            if 'short_description' in item:
+                item['short_description'] = markdown.markdown(
+                    item['short_description'])
             item['description'] = markdown.markdown(item['description'])
     to_convert = ['about', 'experience', 'projects']
     for i in to_convert:

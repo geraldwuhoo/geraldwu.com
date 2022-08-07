@@ -40,11 +40,20 @@ skills:
       Kubernetes, GitOps, Terraform, GitLab CI/CD, Docker, VMWare vSphere/vSAN, Ansible, LaTeX, Git
 
 experience:
-  - company: Google
+  - company: Google (YouTube)
     position: Software Engineer
     dates: Jun 2021 - PRESENT
     description: |
-      * YouTube Commerce Pre-purchase Serving
+      * Worked with **YouTube Commerce Pre-purchase Serving**
+          * Serves valid and best offers given the customer's current standing
+      * Worked on **migrating backend systems** from existing fragmented infrastructure to a more **unified infrastructure**
+          * Ongoing project expected to impact all paying users on the YouTube platform
+      * Designed and implemented backend systems features for the new Play payment processor on Android
+          * Implemented a system to support payment rollbacks for refunds and payment failures
+              * In production serving all Android payment rollbacks
+          * Implemented a system to allow for true multiple line item checkout
+              * Affected millions of currently existing users
+      * Implemented a **backend system** to support the EU's **price transparency initiative**, that requires services to display the lowest price in the past 30 days to users
 
   - company: Amazon Web Services (AWS)
     position: Software Engineer Intern
@@ -67,10 +76,10 @@ experience:
     position: Software Engineer Intern
     dates: May 2019 - Aug 2019
     description: |
-      * Part of software development team working on **autonomous** (self-driving) sea vessels (C++/Python)
       * Core member of **systems architecture** team for next-gen virtualization approach (VMWare/Red Hat/Kubernetes)
           * Researched, evaluated, proposed, and implemented various architectures involving **VMWare** clustering, VMWare **vSAN**, Red Hat **OpenShift**, and **Kubernetes**
           * Final proposed systems architecture approved for implementation
+      * Part of software development team working on **autonomous** (self-driving) sea vessels (C++/Python)
       * Major contributor of **software migration** process from Red Hat 6 to 7 (C++/Python)
           * Significant code rewriting to fit a **microservice** approach
 
@@ -79,24 +88,44 @@ experience:
     dates: May 2018 - Aug 2018
     description: |
       * Cluster analysis in **large-scale graphs** (C#)
-          * Researched, implemented, and optimized the **Markov Clustering Algorithm** (MCL) to identify clusters in relational graphs of size **100,000+** nodes and **120,000+** edges in less than **10 minutes**
       * Implemented secure, PCI-compliant payment integration on the web using Authorize.Net (ASP Classic)
-          * Complete integration with the **Authorize.Net** payment gateway, including both **one-time** payments and long-term customer **payment profiles**
 
 projects:
-  - title: Omgur &mdash; A FOSS private front-end for Imgur
-    link: "https://git.geraldwu.com/gerald/Omgur"
-    language: Golang
-    image: "https://geraldwu.com/images/imgur-logo.png"
-    description: |
-      Omgur is a free and open-source private front-end proxy for Imgur, inspired by [Invidious](https://github.com/iv-org/invidious), [Nitter](https://github.com/zedeus/nitter), and [Teddit](https://codeberg.org/teddit/teddit). Omgur runs with no JavaScript, ads, or tracking. All requests are proxied through the Omgur backend to prevent Imgur from tracking IP or JavaScript fingerprint. Easily self-hostable through the Docker image provided by Gitlab CI/CD configuration.
+  - title: Homelab IaC &mdash; a fully HA k8s deployment using Terraform and Flux
+    link: "https://gitlab.wuhoo.xyz/jerry/homelab-iac"
+    language: Infrastructure as Code
+    image: "/images/kubernetes-logo.webp"
+    short_description: |
+      Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap and install a full high availability (HA) deployment of Kubernetes using the k3s distro from Rancher.
 
-  - title: Quantum Mechanical Wave Function Propagation
-    link: "https://git.geraldwu.com/gerald/QuantumEvolution"
-    language: Processing
-    image: "https://geraldwu.com/images/quantum.jpg"
+      Following k3s bootstrapping, the project uses Flux gitops to deploy all the Kubernetes workloads in the cluster, including automatic secrets encryption/decryption with Mozilla SOPS.
+
+      Both [geraldwu.com](https://geraldwu.com) and [wuhoo.xyz](https://wuhoo.xyz) (and all related services) are hosted on this Kubernetes cluster.
+
     description: |
-      A program to evolve arbitrary initial states through time for the one-dimensional Schrodinger Equation and Wave Equation in the absence of a potential field. Highly optimized to run in **real time**. No pre-rendering. Accurate to millions of timesteps before noticeable error propagation. Written in Processing (a fork of Java with a focus on real-time graphing), with a small shell script launcher.
+      Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap and install a full high availability (HA) deployment of Kubernetes using the k3s distro from Rancher. It uses kube-vip to deploy an on-premise cloud load balancer, and uses Ceph as its container storage interface (CSI) for dynamic volume provisioning.
+      
+      Since the project is implemented in Terraform, it supports idempotent creation/desctruction of the Kubernetes nodes, which allows for easy rolling fixes if necessary. The provisioner also deploys `kured` and Rancher's `system-upgrade-controller` to allow for automatic, rolling updates of both the Kubernetes software and the underyling OS.
+
+      Following k3s bootstrapping, the project uses Flux gitops to deploy all the Kubernetes workloads in the cluster, including automatic secrets encryption/decryption with Mozilla SOPS. This enables self-documenting, auditable configuration of all the workloads as code.
+      
+      Both [geraldwu.com](https://geraldwu.com) and [wuhoo.xyz](https://wuhoo.xyz) (and all related services) are hosted on this Kubernetes cluster.
+
+  - title: medtracker.io &mdash; An easy, user-friendly med school tracker with Google Docs integration
+    link: "https://medtracker.io"
+    language: Golang, Next.js, IaC
+    image: "/images/medtracker-logo.png"
+    description: |
+      A webservice to give medical school applicants an easy way to track all their application progress, with a user-friendly dashboard and automatic Google Docs integration. When a user adds a medical school to their profile, a Google Doc is automatically created in their linked Google account associated with the medical school to allow for an easy overview of all applications and their associated statements.
+
+      This project uses Golang on the backend, and Next.js on the frontend. For infrastructure, deployment is fully automated with Terraform to deploy a k3s cluster, Flux to deploy and monitor workloads, and GitLab CI/CD to automatically test, build, and push Docker images.
+
+  - title: Omgur &mdash; A FOSS private front-end for Imgur
+    link: "https://gitlab.wuhoo.xyz/jerry/Omgur"
+    language: Golang
+    image: "/images/imgur-logo.png"
+    description: |
+      Omgur is a free and open-source private front-end proxy for Imgur, inspired by [Invidious](https://github.com/iv-org/invidious), [Nitter](https://github.com/zedeus/nitter), and [Teddit](https://codeberg.org/teddit/teddit). Omgur runs with no JavaScript, ads, or tracking. All requests are proxied through the Omgur backend to prevent Imgur from tracking IP or JavaScript fingerprint. Easily self-hostable through the Docker image provided by Gitlab CI/CD.
 
 services:
   - title: GitLab CE
