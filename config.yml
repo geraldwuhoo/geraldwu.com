@@ -66,11 +66,12 @@ experience:
           * Part of an existing effort to migrate **Feature Access Control** from a flat config file in **S3** to a fast, compartmentalized, safe, dynamic config **deployment as code**
 
   - company: Leidos
-    position: Software Engineer Intern
+    position: Software Engineer/IT Operations Intern
     dates: May 2019 - Aug 2019
     description: |
       * Core member of **systems architecture** team for next-gen virtualization approach (VMWare/Red Hat/Kubernetes)
           * Researched, evaluated, proposed, and implemented various architectures involving **VMWare** clustering, VMWare **vSAN**, Red Hat **OpenShift**, and **Kubernetes**
+          * Met with various vendors to discuss **architecture** and **systems design**
           * Final proposed systems architecture approved for implementation
       * Part of software development team working on **autonomous** (self-driving) sea vessels (C++/Python)
       * Major contributor of **software migration** process from Red Hat 6 to 7 (C++/Python)
@@ -119,71 +120,6 @@ projects:
     image: "/images/imgur-logo.png"
     description: |
       Omgur is a free and open-source private front-end proxy for Imgur, inspired by [Invidious](https://github.com/iv-org/invidious), [Nitter](https://github.com/zedeus/nitter), and [Teddit](https://codeberg.org/teddit/teddit). Omgur runs with no JavaScript, ads, or tracking. All requests are proxied through the Omgur backend to prevent Imgur from tracking IP or JavaScript fingerprint. Easily self-hostable through the Docker image provided by Gitlab CI/CD.
-
-services:
-  - title: GitLab CE
-    link: "https://git.geraldwu.com"
-    logo: "/images/gitlab-logo.png"
-
-  - title: GitLab Container Registry
-    link: "https://git.geraldwu.com/gerald/omgur/container_registry"
-    logo: "/images/gitlab-logo.png"
-
-  - title: Matrix Synapse
-    link: "https://synapse.geraldwu.com"
-    logo: "/images/matrix-logo.png"
-
-  - title: Element
-    link: "https://element.geraldwu.com"
-    logo: "/images/element-logo.png"
-
-  - title: WriteFreely
-    link: "https://blog.geraldwu.com"
-    logo: "/images/writefreely-logo.png"
-
-  - title: NextCloud
-    link: "https://cloud.geraldwu.com"
-    logo: "/images/nextcloud-logo.png"
-
-  - title: Collabora Online
-    link: "https://collabora.geraldwu.com"
-    logo: "/images/collabora-logo.png"
-
-  - title: Seafile
-    link: "https://seafile.geraldwu.com"
-    logo: "/images/seafile-logo.png"
-
-  - title: EteSync
-    link: "https://etesync.geraldwu.com"
-    logo: "/images/etesync-logo.png"
-
-  - title: EteSync-Web
-    link: "https://pim.geraldwu.com"
-    logo: "/images/etesync-logo.png"
-
-  - title: Paperless-ng
-    link: "https://paperless.geraldwu.com"
-    logo: "/images/paperless-logo.png"
-
-  - title: Gotify
-    link: "https://gotify.geraldwu.com"
-    logo: "/images/gotify-logo.png"
-
-  - title: PrivateBin
-    link: "https://paste.geraldwu.com"
-    logo: "/images/privatebin-logo.png"
-
-  - title: Calibre-Web
-    link: "https://calibre.geraldwu.com"
-    logo: "/images/calibre-logo.png"
-
-  - title: DokuWiki
-    link: "https://wiki.geraldwu.com"
-    logo: "/images/dokuwiki-logo.png"
-
-  - title: Shynet
-    link: "https://shy.geraldwu.com"
-    logo: "/images/shynet-logo.png"
 
 contact:
   - type: Email
