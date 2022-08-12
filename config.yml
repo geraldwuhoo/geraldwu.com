@@ -3,15 +3,6 @@ resume: "/resume.pdf"
 blog: "https://blog.geraldwu.com"
 
 about:
-  - title: Software Engineering
-    description: |
-      I'm primarily a developer focused in Object-Oriented Programming and Backend Systems Development. Both my professional career and schooling have been focused in software development.
-
-      In terms of professional experience, I have worked on very large scale backend systems, both at Google and Amazon.
-
-      I am most familiar with the Java, C, Python, and GoLang languages. I also have some limited experience in C++, C#, JavaScript, and Scala.
-
-      If you want to see some of my more notable projects, please visit the [projects](#projects) section. Or, visit my [self-hosted GitLab](https://gitlab.wuhoo.xyz/jerry) or my [GitHub](https://github.com/geraldwuhoo/) to view all of them.
   - title: IT Operations
     description: |
       I'm a Linux systems administrator, focused on cloud-native deployments and infrastructure as code (IaC).
@@ -23,6 +14,15 @@ about:
       I am a  
         * [Certified Kubernetes Administrator](https://training.linuxfoundation.org/certification/verify/) (LF-inn96e0qrb)  
         * [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714) (180-132-714)
+  - title: Software Engineering
+    description: |
+      I'm primarily a developer focused in Object-Oriented Programming and Backend Systems Development. Both my professional career and schooling have been focused in software development.
+
+      In terms of professional experience, I have worked on very large scale backend systems, both at Google and Amazon.
+
+      I am most familiar with the Java, C, Python, and GoLang languages. I also have some limited experience in C++, C#, JavaScript, and Scala.
+
+      If you want to see some of my more notable projects, please visit the [projects](#projects) section. Or, visit my [self-hosted GitLab](https://gitlab.wuhoo.xyz/jerry) or my [GitHub](https://github.com/geraldwuhoo/) to view all of them.
 
 education:
   - school: Brown University
