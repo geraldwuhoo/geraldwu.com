@@ -54,7 +54,7 @@ experience:
               * In production serving all Android payment rollbacks
           * Implemented a system to allow for true multiple line item checkout
               * Affected millions of currently existing users
-      * Implemented a **backend system** to support the EU's **price transparency initiative**, that requires services to display the lowest price in the past 30 days to users
+      * Implemented a **backend system** to support the EU's **price transparency initiative**
 
   - company: Amazon Web Services (AWS)
     position: Software Engineer Intern
