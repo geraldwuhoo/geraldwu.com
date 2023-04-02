@@ -110,7 +110,7 @@ projects:
   - title: medtracker.io &mdash; An easy, user-friendly med school tracker with Google Docs integration
     link: "https://medtracker.io"
     language: Golang, Next.js, IaC
-    image: "/images/medtracker-logo.png"
+    image: "/images/medtracker-logo.webp"
     description: |
       A webservice to give medical school applicants an easy way to track all their application progress, with a user-friendly dashboard and automatic Google Docs integration. When a user adds a medical school to their profile, a Google Doc is automatically created in their linked Google account associated with the medical school to allow for an easy overview of all applications and their associated statements.
 
