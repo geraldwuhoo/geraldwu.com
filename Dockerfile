@@ -24,7 +24,7 @@ ARG CI_PIPELINE_ID
 ARG CI_PIPELINE_URL
 RUN make
 
-FROM docker.io/joseluisq/static-web-server:2.14.2
+FROM docker.io/joseluisq/static-web-server:2.15.0
 
 ENV SERVER_ROOT=/public
 WORKDIR /public
