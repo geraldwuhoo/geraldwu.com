@@ -42,9 +42,15 @@ skills:
       Kubernetes, GitOps, Terraform, GitLab CI/CD, Docker, VMWare vSphere/vSAN, Ansible, LaTeX, Git
 
 experience:
+  - company: SpaceX (Starlink)
+    position: Site Reliability Engineer
+    dates: Mar 2023 - PRESENT
+    description: |
+      * Deploy and administer on-premise Kubernetes clusters and tooling for Starlink satellites
+
   - company: Google (YouTube)
     position: Software Engineer
-    dates: Jun 2021 - PRESENT
+    dates: Jun 2021 - Mar 2023
     description: |
       * Worked with **YouTube Commerce Pre-purchase Serving**
           * Serves valid and best offers given the customer's current standing
