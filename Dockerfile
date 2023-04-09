@@ -24,7 +24,7 @@ ARG CI_PIPELINE_ID
 ARG CI_PIPELINE_URL
 RUN make
 
-FROM docker.io/joseluisq/static-web-server:2.15.0
+FROM docker.io/p3terx/darkhttpd:1.14
 
 ENV SERVER_ROOT=/public
 WORKDIR /public
@@ -33,3 +33,5 @@ COPY images /public/images
 COPY --from=build /site/out /public
 
 EXPOSE 80
+
+CMD ["/public"]
