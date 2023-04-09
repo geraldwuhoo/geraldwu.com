@@ -26,7 +26,6 @@ RUN make
 
 FROM docker.io/p3terx/darkhttpd:1.14
 
-ENV SERVER_ROOT=/public
 WORKDIR /public
 
 COPY images /public/images
