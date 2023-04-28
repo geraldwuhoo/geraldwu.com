@@ -46,7 +46,7 @@ experience:
     position: Site Reliability Engineer
     dates: Mar 2023 - PRESENT
     description: |
-      * Deploy and administer on-premise Kubernetes clusters and tooling for Starlink satellites
+      * Deploy and administer on-premise Kubernetes clusters and cloud-native tooling for Starlink satellites
 
   - company: Google (YouTube)
     position: Software Engineer
