@@ -24,7 +24,7 @@ ARG CI_PIPELINE_ID
 ARG CI_PIPELINE_URL
 RUN make
 
-FROM docker.io/p3terx/darkhttpd:1.14
+FROM docker.io/p3terx/darkhttpd:1.15
 
 WORKDIR /public
 
