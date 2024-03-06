@@ -34,7 +34,7 @@ pylint:
 build:
   stage: build
   image:
-    name: gcr.io/kaniko-project/executor:v1.17.0-debug
+    name: gcr.io/kaniko-project/executor:v1.21.0-debug
     entrypoint: [""]
   before_script:
     - mkdir -p /kaniko/.docker
