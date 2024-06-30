@@ -19,6 +19,8 @@
           python3
           pandoc
           wkhtmltopdf-bin
+          html-minifier
+          clean-css-cli
         ];
         pythonPackages = with pkgs.python3Packages; [
           jinja2

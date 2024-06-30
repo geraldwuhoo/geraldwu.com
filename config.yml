@@ -7,7 +7,7 @@ about:
     description: |
       I'm a Linux systems administrator, focused on cloud-native deployments and infrastructure as code (IaC).
 
-      All of my [services](https://homer.wuhoo.xyz/) are hosted on an on-premise [Kubernetes](https://kubernetes.io/) cluster, deployed entirely via [Terraform](https://www.terraform.io/). Storage is backed by a [Ceph](https://ceph.io/) cluster with dynamic storage provisioning via CSI. All services are deployed via GitOps with [Flux](https://fluxcd.io/). The configuration files for Flux and Terraform can be found at [this repo](https://gitlab.wuhoo.xyz/jerry/homelab-iac).
+      All of my [services](https://wuhoo.xyz/) are hosted on an on-premise [Kubernetes](https://kubernetes.io/) cluster, deployed entirely via [Terraform](https://www.terraform.io/). Storage is backed by a [Ceph](https://ceph.io/) cluster with dynamic storage provisioning via CSI. All services are deployed via GitOps with [Flux](https://fluxcd.io/). The configuration files for Flux and Terraform can be found at [this repo](https://gitlab.wuhoo.xyz/jerry/homelab-iac).
 
       This is hosted on-premise on segregated VLANs with limited inter-VLAN routing rules, behind a self-built firewall/router running [OPNsense](https://opnsense.org/) software.
 
@@ -107,14 +107,14 @@ projects:
 
     description: |
       Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap and install a full high availability (HA) deployment of Kubernetes using the k3s distro from Rancher. It uses kube-vip to deploy an on-premise cloud load balancer, and uses Ceph as its container storage interface (CSI) for dynamic volume provisioning.
-      
+
       Since the project is implemented in Terraform, it supports idempotent creation/desctruction of the Kubernetes nodes, which allows for easy rolling fixes if necessary. The provisioner also deploys `kured` and Rancher's `system-upgrade-controller` to allow for automatic, rolling updates of both the Kubernetes software and the underyling OS.
 
       Following k3s bootstrapping, the project uses Flux gitops to deploy all the Kubernetes workloads in the cluster, including automatic secrets encryption/decryption with Mozilla SOPS. This enables self-documenting, auditable configuration of all the workloads as code.
-      
+
       Both [geraldwu.com](https://geraldwu.com) and [wuhoo.xyz](https://wuhoo.xyz) (and all related services) are hosted on this Kubernetes cluster.
 
-  - title: medtracker.io &mdash; An easy, user-friendly med school tracker with Google Docs integration
+  - title: medtracker.io &mdash; An easy, user-friendly med school tracker with Google Docs integration (defunct)
     link: "https://medtracker.io"
     language: Golang, Next.js, IaC
     image: "/images/medtracker-logo.webp"

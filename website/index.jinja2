@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{data.title}}</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <header>
-        <h1>Gerald Wu</h1>
-        <aside>
-          <a target="_blank" href="{{data.resume}}">[Resume]</a>
-          <a target="_blank" href="{{data.blog}}">[Blog]</a>
-        </aside>
-    </header>
-    <main>
-      <h2 id="about">About Me</h2>
-      <div class="blurb">
-        {% for blurb in data.about %}
-        <div class="box">
-          <h3>{{blurb.title}}</h3>
-          {{blurb.description}}
-        </div>
-        {% endfor %}
-      </div>
 
-      <h2>Projects</h2>
-      <div class="projects">
-        <ul class="tl">
-          {% for project in data.projects %}
-          <li class="tl-item ng-repeat="item in retailer_history">
-            <strong><a target="_blank" href="{{project.link}}">{{project.title}}</a></strong><br>
-            <em class="grey">{{project.language}}</em><br>
-            {%- if project.short_description is defined %}
-            {{project.short_description}}
-            {%- else %}
-            {{project.description}}
-            {%- endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{data.title}}</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <base target="_blank">
+</head>
 
-      <h2>Contact Me</h2>
-      <div class="contact">
-        {% for contact in data.contact %}
-        <p>
-        {{contact.type}}: 
-        <a target="_blank" class="grey" href="{{contact.link}}">
+<body>
+  <header>
+    <h1>Gerald Wu</h1>
+    <aside>
+      <a href="{{data.resume}}">[Resume]</a>
+      <a href="{{data.blog}}">[Blog]</a>
+    </aside>
+  </header>
+  <main>
+    <h2>About Me</h2>
+    <div class="blurb">
+      {% for blurb in data.about -%}
+      <div class="box">
+        <h3>{{blurb.title}}</h3>
+        {{blurb.description}}
+      </div>
+      {% endfor -%}
+    </div>
+
+    <h2>Projects</h2>
+    <div class="projects">
+      <ul class="tl">
+        {% for project in data.projects -%}
+        <li class="tl-item" ng-repeat="item in retailer_history">
+          <strong><a href="{{project.link}}">{{project.title}}</a></strong><br>
+          <em class="grey">{{project.language}}</em><br>
+          {%- if project.short_description is defined %}
+          {{project.short_description}}
+          {%- else %}
+          {{project.description}}
+          {%- endif %}
+        </li>
+        {% endfor -%}
+      </ul>
+    </div>
+
+    <h2>Contact Me</h2>
+    <div>
+      {% for contact in data.contact -%}
+      <p>
+        {{contact.type}}:
+        <a class="grey" href="{{contact.link}}">
           {{contact.username}}
         </a>
-        </p>
-        {% endfor %}
-      </div>
-    </main>
-
-    <footer class="grey">
-      <p>
-        This static page was automatically generated and deployed by the <a target="_blank" href="{{data.repo.url}}">{{data.repo.path}}</a> project using GitLab CI/CD.
       </p>
-      Git commit: <a target="_blank" href="{{data.commit.url}}">{{data.commit.sha}}</a><br>
-      CI/CD Pipeline: <a target="_blank" href="{{data.pipeline.url}}">#{{data.pipeline.id}}</a>
-    </footer>
-  </body>
+      {% endfor -%}
+    </div>
+  </main>
+
+  <footer class="grey">
+    <p>
+      This static page was automatically generated and deployed by the <a
+        href="{{data.repo.url}}">{{data.repo.path}}</a> project using GitLab CI/CD.
+    </p>
+    Git commit: <a href="{{data.commit.url}}">{{data.commit.sha}}</a><br>
+    CI/CD Pipeline: <a href="{{data.pipeline.url}}">#{{data.pipeline.id}}</a>
+  </footer>
+</body>
+
 </html>

@@ -68,7 +68,6 @@ header {
     text-shadow: 0 1px 0 #000000;
 
     padding: 10vh 0;
-    margin-bottom: 3em;
     text-align: center;
 
     & h1 {
@@ -153,7 +152,7 @@ div.right {
     position: relative;
 
     & ul.tl {
-        margin: 20px 0;
+        margin: 20px 0 0;
         padding: 0;
         display: inline-block;
 
@@ -168,6 +167,7 @@ div.right {
 
             &:last-child {
                 border-left: 0;
+                padding: 0 0 0 30px;
             }
 
             &::before {
