@@ -29,11 +29,6 @@
       {% for project in data.projects %}
       <div class="project">
         <div class="box">
-          <a target="_blank" style="text-decoration:none;border-bottom:none;" href="{{project.link}}">
-            <img src="{{project.image}}">
-          </a>
-        </div>
-        <div class="box">
           <strong><a target="_blank" href="{{project.link}}">{{project.title}}</a></strong><br>
           <em class="grey">{{project.language}}</em><br>
           {%- if project.short_description is defined %}

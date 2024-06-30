@@ -12,9 +12,10 @@ about:
       This is hosted on-premise on segregated VLANs with limited inter-VLAN routing rules, behind a self-built firewall/router running [OPNsense](https://opnsense.org/) software.
 
       I am a  
-        * [Certified Kubernetes Security Specialist](https://training.linuxfoundation.org/certification/verify/) (LF-24hswd9rmm)  
-        * [Certified Kubernetes Administrator](https://training.linuxfoundation.org/certification/verify/) (LF-inn96e0qrb)  
-        * [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714) (180-132-714)
+
+      * [Certified Kubernetes Security Specialist](https://training.linuxfoundation.org/certification/verify/) (LF-24hswd9rmm)  
+      * [Certified Kubernetes Administrator](https://training.linuxfoundation.org/certification/verify/) (LF-inn96e0qrb)  
+      * [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714) (180-132-714)
   - title: Software Engineering
     description: |
       I'm primarily a developer focused in Object-Oriented Programming and Backend Systems Development. Both my professional career and schooling have been focused in software development.

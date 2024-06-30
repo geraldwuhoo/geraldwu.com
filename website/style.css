@@ -14,62 +14,78 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    body, footer {
+
+    body,
+    footer {
         color: var(--dark-text-color);
         background: var(--dark-bg-color);
         text-shadow: 0 1px 0 var(--dark-text-shadow);
     }
+
     a {
         border-bottom: 1px solid var(--dark-text-color);
         color: var(--dark-text-color);
     }
+
     .grey {
         color: var(--dark-grey-color);
+
+        & a {
+            border-bottom: 1px solid var(--dark-grey-color);
+            color: var(--dark-grey-color);
+        }
     }
-    .grey a {
-        border-bottom: 1px solid var(--dark-grey-color);
-        color: var(--dark-grey-color);
-    }
+
     header {
         color: #fbfbfb;
         background: #080808;
         text-shadow: 0 1px 0 #000000;
-    }
-    header>aside {
-        color: var(--dark-grey-color);
-    }
-    header>aside>a {
-        color: var(--dark-grey-color);
+
+        & aside {
+            color: var(--dark-grey-color);
+
+            & a {
+                color: var(--dark-grey-color);
+            }
+        }
     }
 }
 
 @media (prefers-color-scheme: light) {
-    body, footer {
+
+    body,
+    footer {
         color: var(--light-text-color);
         background: var(--light-bg-color);
         text-shadow: 0 1px 0 var(--light-text-shadow);
     }
+
     a {
         border-bottom: 1px solid var(--light-text-color);
         color: var(--light-text-color);
     }
+
     .grey {
         color: var(--light-grey-color);
+
+        & a {
+            border-bottom: 1px solid var(--light-grey-color);
+            color: var(--light-grey-color);
+        }
     }
-    .grey a {
-        border-bottom: 1px solid var(--light-grey-color);
-        color: var(--light-grey-color);
-    }
+
     header {
         color: #fbfbfb;
         background: #181818;
         text-shadow: 0 1px 0 #000000;
-    }
-    header>aside {
-        color: var(--light-grey-color);
-    }
-    header>aside>a {
-        color: var(--light-grey-color);
+
+        & aside {
+            color: var(--light-grey-color);
+
+            & a {
+                color: var(--light-grey-color);
+            }
+        }
     }
 }
 
@@ -78,19 +94,24 @@ ul {
 }
 
 
-header, main, footer {
+header,
+main,
+footer {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
 }
 
-main, footer {
+main,
+footer {
     margin: 1em auto;
     max-width: 50em;
     padding: 0 .62em;
     line-height: 1.8;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.6;
     padding-top: 1em;
 }
@@ -102,24 +123,25 @@ p {
 header {
     padding: 10vh 0;
     margin-bottom: 3em;
-}
+    text-align: center;
 
-header>h1 {
-    font-size: xxx-large;
+    & h1 {
+        font-size: xxx-large;
+    }
 }
 
 @media print {
     main {
-        max-width: none
+        max-width: none;
     }
 }
 
 a {
     text-decoration: none;
-}
 
-a:hover {
-    border-bottom: 0;
+    &:hover {
+        border-bottom: 0;
+    }
 }
 
 div.left {
@@ -136,26 +158,14 @@ div.right {
     text-decoration: none;
 }
 
-header {
-    text-align: center;
-}
-
-header>aside {
-    text-align: center;
-}
-
-header>aside>a {
-    text-align: center;
-}
-
 .blurb {
     display: flex;
     flex-direction: row;
-}
 
-.blurb .box {
-    flex: 50%;
-    padding-right: 10px;
+    & .box {
+        flex: 50%;
+        padding-right: 10px;
+    }
 }
 
 @media (max-width: 800px) {
@@ -168,55 +178,20 @@ header>aside>a {
     display: flex;
     flex-direction: row;
     padding-top: 1em;
-}
 
-.project .box {
-    flex: 50%;
-    padding-left: 5px;
-    padding-right: 5px;
-}
+    & .box {
+        flex: 50%;
 
-.project .box a>img {
-    vertical-align: middle;
-    width: 100%;
-    border-radius: 5%;
+        & a>img {
+            vertical-align: middle;
+            width: 100%;
+            border-radius: 5%;
+        }
+    }
 }
 
 @media (max-width: 800px) {
     .project {
         flex-direction: column;
-    }
-}
-
-.service {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    padding-top: 1em;
-}
-
-.service .box {
-    flex: 24.999%;
-    padding-bottom: 25px;
-}
-
-.service .box a {
-    text-decoration: none;
-    border-bottom: 0px;
-}
-
-.service .box a>img {
-    max-width: 50px;
-}
-
-@media (max-width: 800px) {
-    .service .box {
-        flex: 50%;
-    }
-}
-
-@media (max-width: 600px) {
-    .service .box {
-        flex: 100%;
     }
 }
