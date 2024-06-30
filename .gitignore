@@ -1,4 +1,5 @@
 venv/
+.direnv/
 .vscode/
 out/
 index.html
