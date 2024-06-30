@@ -25,21 +25,22 @@
         {% endfor %}
       </div>
 
-      <h2 id="projects">Projects</h2>
-      {% for project in data.projects %}
-      <div class="project">
-        <div class="box">
-          <strong><a target="_blank" href="{{project.link}}">{{project.title}}</a></strong><br>
-          <em class="grey">{{project.language}}</em><br>
-          {%- if project.short_description is defined %}
-          {{project.short_description}}
-          {%- else %}
-          {{project.description}}
-          {%- endif %}
-        </div>
+      <h2>Projects</h2>
+      <div class="projects">
+        <ul class="tl">
+          {% for project in data.projects %}
+          <li class="tl-item ng-repeat="item in retailer_history">
+            <strong><a target="_blank" href="{{project.link}}">{{project.title}}</a></strong><br>
+            <em class="grey">{{project.language}}</em><br>
+            {%- if project.short_description is defined %}
+            {{project.short_description}}
+            {%- else %}
+            {{project.description}}
+            {%- endif %}
+          </li>
+          {% endfor %}
+        </ul>
       </div>
-      <br>
-      {% endfor %}
 
       <h2>Contact Me</h2>
       <div class="contact">
@@ -56,7 +57,7 @@
 
     <footer class="grey">
       <p>
-        Fun fact! This static page was automatically generated and deployed by the <a target="_blank" href="{{data.repo.url}}">{{data.repo.path}}</a> project using GitLab CI/CD.
+        This static page was automatically generated and deployed by the <a target="_blank" href="{{data.repo.url}}">{{data.repo.path}}</a> project using GitLab CI/CD.
       </p>
       Git commit: <a target="_blank" href="{{data.commit.url}}">{{data.commit.sha}}</a><br>
       CI/CD Pipeline: <a target="_blank" href="{{data.pipeline.url}}">#{{data.pipeline.id}}</a>

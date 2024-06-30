@@ -1,5 +1,5 @@
 # Build container stage
-FROM docker.io/library/ubuntu:jammy AS build
+FROM docker.io/library/ubuntu:22.04 AS build
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -28,7 +28,6 @@ FROM docker.io/p3terx/darkhttpd:1.16
 
 WORKDIR /public
 
-COPY images /public/images
 COPY --from=build /site/out /public
 
 EXPOSE 80
