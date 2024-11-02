@@ -3,9 +3,9 @@ resume: "/resume.pdf"
 blog: "https://blog.geraldwu.com"
 
 about:
-  - title: IT Operations
+  - title: Site Reliability Engineering
     description: |
-      I'm a Linux systems administrator, focused on cloud-native deployments and infrastructure as code (IaC).
+      I'm a site reliability engineer, focused on cloud-native deployments and infrastructure as code (IaC).
 
       All of my [services](https://wuhoo.xyz/) are hosted on an on-premise [Kubernetes](https://kubernetes.io/) cluster, deployed entirely via [Terraform](https://www.terraform.io/). Storage is backed by a [Ceph](https://ceph.io/) cluster with dynamic storage provisioning via CSI. All services are deployed via GitOps with [Flux](https://fluxcd.io/). The configuration files for Flux and Terraform can be found at [this repo](https://gitlab.wuhoo.xyz/jerry/homelab-iac).
 
@@ -18,7 +18,7 @@ about:
       * [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714) (180-132-714)
   - title: Software Engineering
     description: |
-      I'm primarily a developer focused in Object-Oriented Programming and Backend Systems Development. Both my professional career and schooling have been focused in software development.
+      I'm a developer focused in Object-Oriented Programming and Backend Systems Development.
 
       In terms of professional experience, I have worked on very large scale backend systems, both at Google and Amazon.
 
@@ -32,15 +32,15 @@ education:
     dates: 2017 - 2021
 
 skills:
-  - type: Programming
+  - type: Languages
     description: |
       Java, GoLang, C, C++, Python, Rust, SQL
-  - type: IT Operations
+  - type: Technologies
     description: |
       [Certified Kubernetes Security Specialist](https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/ccb370ed-1fc7-44e9-94be-62ecefbc48b2-gerald-wu-b6756081-2dbc-43fa-9f0a-c3c8712f44e8-certificate.pdf) (LF-24hswd9rmm)  
       [Certified Kubernetes Administrator](https://ti-user-certificates.s3.amazonaws.com/e0df7fbf-a057-42af-8a1f-590912be5460/ccb370ed-1fc7-44e9-94be-62ecefbc48b2-gerald-wu-3b7fdc0a-246f-43c7-a2c9-d90809a3dac1-certificate.pdf) (LF-inn96e0qrb)  
       [Red Hat Certified System Administrator](https://rhtapps.redhat.com/verify/?certId=180-132-714) (180-132-714)  
-      Kubernetes, GitOps, Terraform, GitLab CI/CD, Docker, VMWare vSphere/vSAN, Ansible, LaTeX, Git
+      Kubernetes, GitOps, Ceph, Terraform, GitLab CI/CD, Docker, VMWare vSphere/vSAN, Ansible, Git
 
 experience:
   - company: SpaceX (Starlink)
@@ -81,10 +81,7 @@ experience:
       * Core member of **systems architecture** team for next-gen virtualization approach (VMWare/Red Hat/Kubernetes)
           * Researched, evaluated, proposed, and implemented various architectures involving **VMWare** clustering, VMWare **vSAN**, Red Hat **OpenShift**, and **Kubernetes**
           * Met with various vendors to discuss **architecture** and **systems design**
-          * Final proposed systems architecture approved for implementation
       * Part of software development team working on **autonomous** (self-driving) sea vessels (C++/Python)
-      * Major contributor of **software migration** process from Red Hat 6 to 7 (C++/Python)
-          * Significant code rewriting to fit a **microservice** approach
 
   - company: FMS Inc.
     position: Software Engineer Intern

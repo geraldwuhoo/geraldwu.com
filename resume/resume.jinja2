@@ -3,16 +3,20 @@ Gerald Wu
 
 ----
 
-> Software Engineering · Computer Science · IT Operations
+> Site Reliability Engineering · Software Engineering · Computer Science
 
 ----
 
-Skills
-------
+Experience
+----------
 
-{% for skill in data.skills %}
-{{skill.type}}
-:   {{skill.description}}
+{% for job in data.experience %}
+{{job.dates}}
+:   **{{job.position}}**
+
+    {{job.company}}
+
+    {{job.description}}
 {% endfor %}
 
 Education
@@ -25,16 +29,12 @@ Education
     {{schooling.degree}}
 {% endfor %}
 
-Experience
-----------
+Skills
+------
 
-{% for job in data.experience %}
-{{job.dates}}
-:   **{{job.position}}**
-
-    {{job.company}}
-
-    {{job.description}}
+{% for skill in data.skills %}
+{{skill.type}}
+:   {{skill.description}}
 {% endfor %}
 
 <div style="page-break-after: always;"></div>
