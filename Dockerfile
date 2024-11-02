@@ -1,5 +1,5 @@
 # Build container stage
-FROM docker.io/library/ubuntu:22.04 AS build
+FROM docker.io/library/ubuntu:24.04 AS build
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 WORKDIR /site
 COPY requirements.txt /site
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --break-system-packages -r requirements.txt
 
 COPY . /site
 ARG CI_PROJECT_PATH
