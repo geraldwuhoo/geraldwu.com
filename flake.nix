@@ -9,12 +9,7 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            permittedInsecurePackages = [ "openssl-1.1.1w" ];
-          };
-        };
+        pkgs = import nixpkgs { inherit system; };
         packages = with pkgs; [
           python3
           pandoc
