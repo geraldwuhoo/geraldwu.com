@@ -5,11 +5,9 @@ blog: "https://blog.geraldwu.com"
 about:
   - title: Site Reliability Engineering
     description: |
-      I'm a site reliability engineer, focused on cloud-native deployments and infrastructure as code (IaC).
+      I'm a site reliability engineer, focused on cloud-native deployments and infrastructure as code (IaC). I am most familiar with the Kubernetes ecosystem on bare-metal.
 
-      All of my [services](https://wuhoo.xyz/) are hosted on an on-premise [Kubernetes](https://kubernetes.io/) cluster, deployed entirely via [Terraform](https://www.terraform.io/). Storage is backed by a [Ceph](https://ceph.io/) cluster with dynamic storage provisioning via CSI. All services are deployed via GitOps with [Flux](https://fluxcd.io/). The configuration files for Flux and Terraform can be found at [this repo](https://gitlab.wuhoo.xyz/jerry/homelab-iac).
-
-      This is hosted on-premise on segregated VLANs with limited inter-VLAN routing rules, behind a self-built firewall/router running [OPNsense](https://opnsense.org/) software.
+      In terms of professional experience, I have worked on large on-premise Kubernetes fleets for SpaceX's Starlink ISP.
 
       I am a  
 
@@ -47,21 +45,18 @@ experience:
     position: Site Reliability Engineer
     dates: Mar 2023 - PRESENT
     description: |
-      * Deploy and administer on-premise Kubernetes clusters and cloud-native tooling for Starlink satellites
+      * Deploy and administer on-premise Kubernetes clusters and cloud-native tooling for Starlink
 
   - company: Google (YouTube)
     position: Software Engineer
     dates: Jun 2021 - Mar 2023
     description: |
-      * Worked with **YouTube Commerce Pre-purchase Serving**
-          * Serves valid and best offers given the customer's current standing
+      * Worked with **YouTube Commerce Pre-purchase Serving** to serve the best valid offers to customers
       * Worked on **migrating backend systems** from existing fragmented infrastructure to a more **unified infrastructure**
           * Ongoing project expected to impact all paying users on the YouTube platform
       * Designed and implemented backend systems features for the new Play payment processor on Android
-          * Implemented a system to support payment rollbacks for refunds and payment failures
-              * In production serving all Android payment rollbacks
-          * Implemented a system to allow for true multiple line item checkout
-              * Affected millions of currently existing users
+          * Implemented a system to support payment rollbacks for refunds and payment failures for all Android payment rollbacks
+          * Implemented a system to allow for true multiple line item checkout for millions of currently existing users
       * Implemented a **backend system** to support the EU's **price transparency initiative**
 
   - company: Amazon Web Services (AWS)
@@ -69,18 +64,15 @@ experience:
     dates: May 2020 - Aug 2020
     description: |
       * Worked with the **Amazon Connect** team &mdash; a **cloud-based** call center as a service product running on **AWS**
-      * Built a deployment pipeline for **Safe Dynamic Config (SDC)**
-          * Implemented strict templating and config generation to allow for configuration as code
+      * Built a deployment pipeline for **Safe Dynamic Config (SDC)** to enable strict templating and config generation as code
       * Created library from scratch to pull deployed **SDCs** from remote and parse them for **Feature Access Control (FAC)** (Java)
-          * Part of an existing effort to migrate **Feature Access Control** from a flat config file in **S3** to a fast, compartmentalized, safe, dynamic config **deployment as code**
 
   - company: Leidos
-    position: Software Engineer/IT Operations Intern
+    position: Software Engineer/Platform Engineer Intern
     dates: May 2019 - Aug 2019
     description: |
-      * Core member of **systems architecture** team for next-gen virtualization approach (VMWare/Red Hat/Kubernetes)
+      * Core member of **systems architecture** design for next-gen virtualization approach (VMWare/Red Hat/Kubernetes)
           * Researched, evaluated, proposed, and implemented various architectures involving **VMWare** clustering, VMWare **vSAN**, Red Hat **OpenShift**, and **Kubernetes**
-          * Met with various vendors to discuss **architecture** and **systems design**
       * Part of software development team working on **autonomous** (self-driving) sea vessels (C++/Python)
 
   - company: FMS Inc.
@@ -92,40 +84,39 @@ experience:
 
 projects:
   - title: Homelab IaC &mdash; a fully HA k8s deployment using Terraform and Flux
-    link: "https://gitlab.wuhoo.xyz/jerry/homelab-iac"
-    language: Infrastructure as Code
-    image: "/images/kubernetes-logo.webp"
+    link: "https://github.com/geraldwuhoo/homelab-iac"
+    language: Kubernetes YAML, Terraform, Nix
     short_description: |
-      Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap and install a full high availability (HA) deployment of Kubernetes using the k3s distro from Rancher.
+      Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap NixOS nodes and install a full high availability (HA) deployment of Kubernetes.
 
       Following k3s bootstrapping, the project uses Flux gitops to deploy all the Kubernetes workloads in the cluster, including automatic secrets encryption/decryption with Mozilla SOPS.
 
       Both [geraldwu.com](https://geraldwu.com) and [wuhoo.xyz](https://wuhoo.xyz) (and all related services) are hosted on this Kubernetes cluster.
 
     description: |
-      Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap and install a full high availability (HA) deployment of Kubernetes using the k3s distro from Rancher. It uses kube-vip to deploy an on-premise cloud load balancer, and uses Ceph as its container storage interface (CSI) for dynamic volume provisioning.
+      Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap NixOS nodes and install a full high availability (HA) deployment of Kubernetes using the k3s distro from Rancher. It uses kube-vip to deploy an on-premise cloud load balancer, and uses Ceph as its container storage interface (CSI) for dynamic volume provisioning.
 
-      Since the project is implemented in Terraform, it supports idempotent creation/desctruction of the Kubernetes nodes, which allows for easy rolling fixes if necessary. The provisioner also deploys `kured` and Rancher's `system-upgrade-controller` to allow for automatic, rolling updates of both the Kubernetes software and the underyling OS.
+      Since the project is implemented in Terraform, it supports idempotent creation/desctruction of the Kubernetes nodes, which allows for easy rolling fixes if necessary.
 
       Following k3s bootstrapping, the project uses Flux gitops to deploy all the Kubernetes workloads in the cluster, including automatic secrets encryption/decryption with Mozilla SOPS. This enables self-documenting, auditable configuration of all the workloads as code.
 
       Both [geraldwu.com](https://geraldwu.com) and [wuhoo.xyz](https://wuhoo.xyz) (and all related services) are hosted on this Kubernetes cluster.
 
-  - title: medtracker.io &mdash; An easy, user-friendly med school tracker with Google Docs integration (defunct)
-    link: "https://medtracker.io"
-    language: Golang, Next.js, IaC
-    image: "/images/medtracker-logo.webp"
+  - title: Uptime.rs &mdash; A simple, statically generated uptime monitoring application
+    link: "https://github.com/geraldwuhoo/uptimers"
+    language: Rust, Go
     description: |
-      A webservice to give medical school applicants an easy way to track all their application progress, with a user-friendly dashboard and automatic Google Docs integration. When a user adds a medical school to their profile, a Google Doc is automatically created in their linked Google account associated with the medical school to allow for an easy overview of all applications and their associated statements.
+      A simple, self-hostable uptime monitoring service written in Rust. It scrapes a list of websites and regenerates a static status page every minute. I wrote this because I felt all existing monitoring solutions were too bloated (JavaScript, dynamic page generation), and also not configurable as code. Uptimers is entirely configurable through a single YAML file.
 
-      This project uses Golang on the backend, and Next.js on the frontend. For infrastructure, deployment is fully automated with Terraform to deploy a k3s cluster, Flux to deploy and monitor workloads, and GitLab CI/CD to automatically test, build, and push Docker images.
+      It integrates with the Go [shoutrrr](https://github.com/containrrr/shoutrrr) notification library through C FFI to provide notifications when a site goes down.
 
-  - title: Omgur &mdash; A FOSS private front-end for Imgur
-    link: "https://gitlab.wuhoo.xyz/jerry/Omgur"
-    language: Golang
-    image: "/images/imgur-logo.png"
+  - title: Adbir &mdash; Another dashboard but in Rust
+    link: "https://github.com/geraldwuhoo/adbir"
+    language: Rust
     description: |
-      Omgur is a free and open-source private front-end proxy for Imgur, inspired by [Invidious](https://github.com/iv-org/invidious), [Nitter](https://github.com/zedeus/nitter), and [Teddit](https://codeberg.org/teddit/teddit). Omgur runs with no JavaScript, ads, or tracking. All requests are proxied through the Omgur backend to prevent Imgur from tracking IP or JavaScript fingerprint. Easily self-hostable through the Docker image provided by Gitlab CI/CD.
+      A dashboard webUI inspired by [Homer](https://github.com/bastienwirtz/homer), both in design and configuration.
+
+      While I enjoy the configurability and relatively minimalist design of Homer, I dislike its hard dependency on JavaScript to render the page. This is a stripped down rewrite of Homer without any JavaScript.
 
 contact:
   - type: Email

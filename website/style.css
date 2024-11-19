@@ -105,7 +105,8 @@ footer {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     line-height: 1.6;
     padding-top: 1em;
 }
@@ -120,16 +121,6 @@ p {
     }
 }
 
-div.left {
-    float: left;
-    text-align: left;
-}
-
-div.right {
-    float: right;
-    text-align: right;
-}
-
 .blurb {
     display: flex;
     flex-direction: row;
@@ -138,31 +129,40 @@ div.right {
         flex: 50%;
         padding-right: 10px;
     }
+
+    & .right-text {
+        float: right;
+        text-align: right;
+    }
 }
 
 @media (max-width: 800px) {
     .blurb {
         flex-direction: column;
+        & .right-text {
+            float: left;
+            text-align: left;
+        }
     }
 }
 
-.projects {
+.experience {
     margin: auto;
     display: block;
     position: relative;
 
-    & ul.tl {
+    >ul.tl {
         margin: 20px 0 0;
         padding: 0;
         display: inline-block;
 
-        & li {
+        >li {
             list-style: none;
             margin: auto;
             margin-left: 1em;
             min-height: 50px;
             border-left: 1px dashed var(--pale-grey-color);
-            padding: 0 0 2em 30px;
+            padding: 0 0 1em 30px;
             position: relative;
 
             &:last-child {

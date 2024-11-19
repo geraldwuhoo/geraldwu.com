@@ -7,7 +7,7 @@ variables:
   DOCKERIO_MIRROR: hub.wuhoo.xyz
 
 .analysis_meta: &analysis_meta
-  image: "registry.wuhoo.xyz/jerry/python-cicd:latest"
+  image: registry.wuhoo.xyz/jerry/python-cicd:latest
   stage: analysis
   before_script:
     - pip install --no-cache-dir -r requirements.txt

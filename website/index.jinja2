@@ -29,17 +29,33 @@
     </div>
 
     <h2>Projects</h2>
-    <div class="projects">
+    <div>
+      {% for project in data.projects -%}
+      <h4><a href="{{project.link}}">{{project.title}}</a></h4>
+      <em class="grey">{{project.language}}</em>
+      {%- if project.short_description is defined %}
+      {{project.short_description}}
+      {%- else %}
+      {{project.description}}
+      {%- endif %}
+      {% endfor -%}
+    </div>
+
+    <h2>Experience</h2>
+    <div class="experience">
       <ul class="tl">
-        {% for project in data.projects -%}
+        {% for experience in data.experience -%}
         <li class="tl-item" ng-repeat="item in retailer_history">
-          <strong><a href="{{project.link}}">{{project.title}}</a></strong><br>
-          <em class="grey">{{project.language}}</em><br>
-          {%- if project.short_description is defined %}
-          {{project.short_description}}
-          {%- else %}
-          {{project.description}}
-          {%- endif %}
+          <strong>{{experience.position}}</strong><br>
+          <div class="blurb">
+            <div class="box">
+              <em class="grey">{{experience.company}}</em>
+            </div>
+            <div class="box right-text">
+              <span class="grey">{{experience.dates}}</span>
+            </div>
+          </div>
+          {{experience.description}}
         </li>
         {% endfor -%}
       </ul>
@@ -59,6 +75,16 @@
   </main>
 
   <footer class="grey">
+    <details>
+      <summary>Why does your site look so ugly?</summary>
+      <p>
+        My website is intentionally designed as a basic text site with a tiny bit of styling. As a result, it retains an
+        incredibly small footprint, both in terms of bandwidth usage and client-side rendering.<br>
+      </p>
+      <p>
+        For more information, see <a href="https://blog.geraldwu.com/posts/a-new-website/">my blog post</a>.
+      </p>
+    </details>
     <p>
       This static page was automatically generated and deployed by the <a
         href="{{data.repo.url}}">{{data.repo.path}}</a> project using GitLab CI/CD.
