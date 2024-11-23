@@ -85,7 +85,7 @@ experience:
 projects:
   - title: Homelab IaC &mdash; a fully HA k8s deployment using Terraform and Flux
     link: "https://github.com/geraldwuhoo/homelab-iac"
-    language: Kubernetes YAML, Terraform, Nix
+    language: Kubernetes, Terraform, Nix
     short_description: |
       Starting from minimal working Proxmox and Ceph clusters, this project uses pure Terraform to bootstrap NixOS nodes and install a full high availability (HA) deployment of Kubernetes.
 

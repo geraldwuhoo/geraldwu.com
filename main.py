@@ -75,7 +75,7 @@ def main():
         print(f'{output_dir} directory not found, creating.')
 
     # Load in config file
-    with open('config.yml', 'r', encoding="utf8") as config_file:
+    with open('config.yaml', 'r', encoding="utf8") as config_file:
         data = yaml.safe_load(config_file)
 
     # Modify data for website

@@ -7,7 +7,7 @@ PYTHON=python3
 
 all: $(OUT_DIR)/index.html $(OUT_DIR)/resume.pdf
 
-$(OUT_DIR)/index.html: main.py config.yml $(WEBSITE_DIR)/index.jinja2 $(WEBSITE_DIR)/style.css
+$(OUT_DIR)/index.html: main.py config.yaml $(WEBSITE_DIR)/index.jinja2 $(WEBSITE_DIR)/style.css
 	$(PYTHON) $< --output-dir "$(OUT_DIR)"
 	cp -v "$(WEBSITE_DIR)"/style.css "$(OUT_DIR)"
 
