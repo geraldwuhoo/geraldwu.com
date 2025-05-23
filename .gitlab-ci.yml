@@ -71,7 +71,7 @@ build:
 push:
   stage: push
   image:
-    name: gcr.io/go-containerregistry/crane/debug:v0.15.2
+    name: gcr.io/go-containerregistry/crane/debug:v0.20.3
     entrypoint: [""]
   script:
     - crane auth login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}
